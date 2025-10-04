@@ -80,5 +80,39 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\ClsCategoryBusinessLayer.csproj">
+      <Project>{f97ef3d9-75ce-4bdf-8293-d6bd801fc57f}</Project>
+      <Name>ClsCategoryBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\ClsInvetoryBusinessLayer.csproj">
+      <Project>{4967593e-e4af-4eaf-9246-7da17be2dfa5}</Project>
+      <Name>ClsInvetoryBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Menu\ClsMenuBusinessLayer\ClsItemBusinessLayer.csproj">
+      <Project>{24e40407-8dd5-46aa-af8c-63b803e1eb75}</Project>
+      <Name>ClsItemBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\ClsOrderDetailBusinessLayer.csproj">
+      <Project>{d1f7f996-887f-40dd-84bd-3f3da5dad5de}</Project>
+      <Name>ClsOrderDetailBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Orders\ClsOrderBusinessLayer\ClsOrderBusinessLayer.csproj">
+      <Project>{1281eb87-2203-4369-b4d7-503d227fc7f9}</Project>
+      <Name>ClsOrderBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Payments\ClsPaymentBusinessLayer\ClsPaymentBusinessLayer.csproj">
+      <Project>{ec6813e6-0441-4e02-928d-0779f9ff9137}</Project>
+      <Name>ClsPaymentBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Tables\ClsTableBusinessLayer\ClsTableBusinessLayer.csproj">
+      <Project>{2ce110ff-16e5-4dbd-9d6a-04ffe020e404}</Project>
+      <Name>ClsTableBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\ClsUserBusinessLayer.csproj">
+      <Project>{eae9702f-5414-4a76-8eac-5940d987986f}</Project>
+      <Name>ClsUserBusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
