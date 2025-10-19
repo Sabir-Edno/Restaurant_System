@@ -1,0 +1,9 @@
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\bin\Debug\ClsRolesDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\bin\Debug\ClsRolesDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\obj\Debug\ClsRoleDataAccessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\obj\Debug\ClsRoleDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\obj\Debug\ClsRoleD.E07EF44B.Up2Date
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\obj\Debug\ClsRolesDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Roles\ClsRolesDataAccessLayer\obj\Debug\ClsRolesDataAccessLayer.pdb

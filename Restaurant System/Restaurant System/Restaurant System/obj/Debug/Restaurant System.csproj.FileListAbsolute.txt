@@ -1,0 +1,66 @@
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Restaurant System.exe.config
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Restaurant System.exe
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Restaurant System.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsCategoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsInvetoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsMenuBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDetailBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsTableBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsUserBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsCategoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsInventoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsMenuDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDetailLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsTableDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsUserDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsCategoryBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsInvetoryBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsMenuBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDetailBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsTableBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsUserBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsCategoryDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsInventoryDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsMenuDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDetailLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsOrderDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsTableDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsUserDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.Properties.Resources.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.csproj.GenerateResource.cache
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaura.2365F09A.Up2Date
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.exe
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Guna.UI2.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant System.exe.config
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsGlobalUserLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsGlobalUserLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDashboardScreen.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrPOSScreen.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Password_Lib.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\Password_Lib.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.CtrlItem.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrUserManagmentScreen.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.Login_Screen.FrrLoginScreen.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsBillBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsPaymentMethodBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsRoleBusinessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ValidationLib.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsBillDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsPaymentMethodDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsRolesDataAccessLayer.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ValidationLib.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsBillBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsPaymentMethodBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsRoleBusinessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsBillDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsPaymentMethodDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\ClsRolesDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrAddOrEditUserScreen.resources

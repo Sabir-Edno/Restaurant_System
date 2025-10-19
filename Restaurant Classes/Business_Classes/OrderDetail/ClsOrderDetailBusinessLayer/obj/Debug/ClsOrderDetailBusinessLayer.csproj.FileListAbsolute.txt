@@ -1,0 +1,11 @@
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsOrderDetailBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsOrderDetailBusinessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsOrderDetailLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsOrderDetailLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\obj\Debug\ClsOrderDetailBusinessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\obj\Debug\ClsOrderDetailBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\obj\Debug\ClsOrder.DF41092D.Up2Date
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\obj\Debug\ClsOrderDetailBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\obj\Debug\ClsOrderDetailBusinessLayer.pdb

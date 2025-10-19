@@ -11,7 +11,7 @@ namespace ClsCategoryDataAccessLayer
 {
     public class ClsCategoryData
     {
-        public static bool GetCategoryByID(int CategoryID, ref string Name)
+        public static bool GetCategoryByID(int CategoryID, ref string CategoryName, ref string Description, ref DateTime CreatedAt, ref DateTime Updated)
         {
             bool isFound = false;
             string query = "SELECT * FROM Categories WHERE CategoryID = @CategoryID";
@@ -30,7 +30,20 @@ namespace ClsCategoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                Name = (string)reader["Name"];
+                                CategoryName = (string)reader["CategoryName"];
+
+                                if (reader["Description"] != DBNull.Value)
+                                    Description = (string)reader["Description"];
+                                else
+                                    Description = "";
+
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Updated"] != DBNull.Value)
+                                    Updated = (DateTime)reader["Updated"];
+                                else
+                                    Updated = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -52,7 +65,7 @@ namespace ClsCategoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetCategoryByCategoryID(int CategoryID, ref string Name)
+        public static bool GetCategoryByCategoryID(int CategoryID, ref string CategoryName, ref string Description, ref DateTime CreatedAt, ref DateTime Updated)
         {
             bool isFound = false;
             string query = "SELECT * FROM Categories WHERE CategoryID = @CategoryID";
@@ -71,7 +84,20 @@ namespace ClsCategoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                Name = (string)reader["Name"];
+                                CategoryName = (string)reader["CategoryName"];
+
+                                if (reader["Description"] != DBNull.Value)
+                                    Description = (string)reader["Description"];
+                                else
+                                    Description = "";
+
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Updated"] != DBNull.Value)
+                                    Updated = (DateTime)reader["Updated"];
+                                else
+                                    Updated = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -93,17 +119,17 @@ namespace ClsCategoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetCategoryByName(ref int CategoryID, string Name)
+        public static bool GetCategoryByCategoryName(ref int CategoryID, string CategoryName, ref string Description, ref DateTime CreatedAt, ref DateTime Updated)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Categories WHERE Name = @Name";
+            string query = "SELECT * FROM Categories WHERE CategoryName = @CategoryName";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -113,6 +139,19 @@ namespace ClsCategoryDataAccessLayer
                                 isFound = true;
 
                                 CategoryID = (int)reader["CategoryID"];
+
+                                if (reader["Description"] != DBNull.Value)
+                                    Description = (string)reader["Description"];
+                                else
+                                    Description = "";
+
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Updated"] != DBNull.Value)
+                                    Updated = (DateTime)reader["Updated"];
+                                else
+                                    Updated = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -134,11 +173,163 @@ namespace ClsCategoryDataAccessLayer
 
             return isFound;
         }
-        public static int AddNewCategory(string Name)
+        public static bool GetCategoryByDescription(ref int CategoryID, ref string CategoryName, string Description, ref DateTime CreatedAt, ref DateTime Updated)
+        {
+            bool isFound = false;
+            string query = "SELECT * FROM Categories WHERE Description = @Description";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Description", Description);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                CategoryID = (int)reader["CategoryID"];
+                                CategoryName = (string)reader["CategoryName"];
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Updated"] != DBNull.Value)
+                                    Updated = (DateTime)reader["Updated"];
+                                else
+                                    Updated = DateTime.MinValue;
+
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool GetCategoryByCreatedAt(ref int CategoryID, ref string CategoryName, ref string Description, DateTime CreatedAt, ref DateTime Updated)
+        {
+            bool isFound = false;
+            string query = "SELECT * FROM Categories WHERE CreatedAt = @CreatedAt";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                CategoryID = (int)reader["CategoryID"];
+                                CategoryName = (string)reader["CategoryName"];
+
+                                if (reader["Description"] != DBNull.Value)
+                                    Description = (string)reader["Description"];
+                                else
+                                    Description = "";
+
+
+                                if (reader["Updated"] != DBNull.Value)
+                                    Updated = (DateTime)reader["Updated"];
+                                else
+                                    Updated = DateTime.MinValue;
+
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool GetCategoryByUpdated(ref int CategoryID, ref string CategoryName, ref string Description, ref DateTime CreatedAt, DateTime Updated)
+        {
+            bool isFound = false;
+            string query = "SELECT * FROM Categories WHERE Updated = @Updated";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Updated", Updated);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                CategoryID = (int)reader["CategoryID"];
+                                CategoryName = (string)reader["CategoryName"];
+
+                                if (reader["Description"] != DBNull.Value)
+                                    Description = (string)reader["Description"];
+                                else
+                                    Description = "";
+
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static int AddNewCategory(string CategoryName, string Description, DateTime CreatedAt, DateTime Updated)
         {
             int CategoryID = -1;
-            string query = @"INSERT INTO Categories (Name)
-                            VALUES (@Name)
+            string query = @"INSERT INTO Categories (CategoryName, Description, CreatedAt, Updated)
+                            VALUES (@CategoryName, @Description, @CreatedAt, @Updated)
                             SELECT SCOPE_IDENTITY();";
             try
             {
@@ -147,7 +338,18 @@ namespace ClsCategoryDataAccessLayer
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+                        if (Description != "")
+                            command.Parameters.AddWithValue("@Description", Description);
+                        else
+                            command.Parameters.AddWithValue("@Description", DBNull.Value);
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+
+                        if (Updated != DateTime.MinValue)
+                            command.Parameters.AddWithValue("@Updated", Updated);
+                        else
+                            command.Parameters.AddWithValue("@Updated", DBNull.Value);
                         connection.Open();
                         object result = command.ExecuteScalar();
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
@@ -168,12 +370,15 @@ namespace ClsCategoryDataAccessLayer
 
             return CategoryID;
         }
-        public static bool UpdateCategory(int CategoryID, string Name)
+        public static bool UpdateCategory(int CategoryID, string CategoryName, string Description, DateTime CreatedAt, DateTime Updated)
         {
             int rowsAffected = 0;
             string query = @"UPDATE Categories  
                                         SET 
-                                        Name = @Name
+                                        CategoryName = @CategoryName, 
+                            Description = @Description, 
+                            CreatedAt = @CreatedAt, 
+                            Updated = @Updated
                             WHERE CategoryID = @CategoryID";
             try
             {
@@ -183,7 +388,10 @@ namespace ClsCategoryDataAccessLayer
                     {
 
                         command.Parameters.AddWithValue("@CategoryID", CategoryID);
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                        command.Parameters.AddWithValue("@Description", Description);
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        command.Parameters.AddWithValue("@Updated", Updated);
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
@@ -287,17 +495,107 @@ namespace ClsCategoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsCategoryExistByName(string Name)
+        public static bool IsCategoryExistByCategoryName(string CategoryName)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Categories WHERE Name = @Name";
+            string query = "SELECT Found=1 FROM Categories WHERE CategoryName = @CategoryName";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool IsCategoryExistByDescription(string Description)
+        {
+            bool isFound = false;
+            string query = "SELECT Found=1 FROM Categories WHERE Description = @Description";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Description", Description);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool IsCategoryExistByCreatedAt(DateTime CreatedAt)
+        {
+            bool isFound = false;
+            string query = "SELECT Found=1 FROM Categories WHERE CreatedAt = @CreatedAt";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool IsCategoryExistByUpdated(DateTime Updated)
+        {
+            bool isFound = false;
+            string query = "SELECT Found=1 FROM Categories WHERE Updated = @Updated";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Updated", Updated);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

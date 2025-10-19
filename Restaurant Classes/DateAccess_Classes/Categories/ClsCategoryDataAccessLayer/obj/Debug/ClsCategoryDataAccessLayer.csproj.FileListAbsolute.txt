@@ -1,0 +1,9 @@
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\bin\Debug\ClsCategoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\bin\Debug\ClsCategoryDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\obj\Debug\ClsCategoryDataAccessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\obj\Debug\ClsCategoryDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\obj\Debug\ClsCateg.74239977.Up2Date
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\obj\Debug\ClsCategoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Categories\ClsCategoryDataAccessLayer\obj\Debug\ClsCategoryDataAccessLayer.pdb

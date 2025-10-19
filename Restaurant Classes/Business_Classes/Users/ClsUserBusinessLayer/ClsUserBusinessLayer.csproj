@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Password_Lib">
+      <HintPath>..\..\..\..\..\C#_My_Libraries\Password_Lib\Password_Lib\Password_Lib\bin\Debug\Password_Lib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\C#_My_Libraries\Password_Lib\Password_Lib\Password_Lib\MyPasswordLibrary.csproj">
+      <Project>{2b3499fe-754d-4866-ace8-406e1cf63f80}</Project>
+      <Name>MyPasswordLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\DateAccess_Classes\Users\ClsUserDataAccessLayer\ClsUserDataAccessLayer.csproj">
       <Project>{00f8c69a-a4b3-4d76-ae40-7ab4744ec8cd}</Project>
       <Name>ClsUserDataAccessLayer</Name>

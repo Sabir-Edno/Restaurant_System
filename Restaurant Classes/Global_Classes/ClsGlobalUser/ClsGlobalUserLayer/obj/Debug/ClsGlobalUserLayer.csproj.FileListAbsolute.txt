@@ -1,0 +1,6 @@
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\bin\Debug\ClsGlobalUserLayer.dll
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\bin\Debug\ClsGlobalUserLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\obj\Debug\ClsGlobalUserLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\obj\Debug\ClsGlobalUserLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\obj\Debug\ClsGlobalUserLayer.dll
+C:\Restaurant-System\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\obj\Debug\ClsGlobalUserLayer.pdb

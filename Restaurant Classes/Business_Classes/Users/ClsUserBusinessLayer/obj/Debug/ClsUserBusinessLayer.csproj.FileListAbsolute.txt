@@ -1,0 +1,13 @@
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsUserBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsUserBusinessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsUserDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsUserDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\obj\Debug\ClsUserBusinessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\obj\Debug\ClsUserBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\obj\Debug\ClsUserB.4596DA50.Up2Date
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\obj\Debug\ClsUserBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\obj\Debug\ClsUserBusinessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\Password_Lib.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Users\ClsUserBusinessLayer\bin\Debug\Password_Lib.pdb

@@ -1,0 +1,9 @@
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\bin\Debug\ClsMenuDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\bin\Debug\ClsMenuDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\obj\Debug\ClsMenuItemDataAccessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\obj\Debug\ClsMenuItemDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\obj\Debug\ClsMenuI.0BF68FDE.Up2Date
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\obj\Debug\ClsMenuDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\DateAccess_Classes\Menu\ClsMenuDataAccessLayer\obj\Debug\ClsMenuDataAccessLayer.pdb

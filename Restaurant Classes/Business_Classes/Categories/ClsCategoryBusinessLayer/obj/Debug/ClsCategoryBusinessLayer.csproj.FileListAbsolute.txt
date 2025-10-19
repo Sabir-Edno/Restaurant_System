@@ -1,0 +1,11 @@
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsCategoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsCategoryBusinessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsCategoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsCategoryDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\obj\Debug\ClsCategoryBusinessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\obj\Debug\ClsCategoryBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\obj\Debug\ClsCateg.FD9CC845.Up2Date
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\obj\Debug\ClsCategoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\obj\Debug\ClsCategoryBusinessLayer.pdb

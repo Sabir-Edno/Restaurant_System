@@ -11,17 +11,17 @@ namespace ClsInventoryDataAccessLayer
 {
     public class ClsInventoryData
     {
-        public static bool GetItemByID(int ItemID, ref string Name, ref decimal Quantity, ref string Unit, ref DateTime LastUpdate)
+        public static bool GetInventoryByID(int InventoryID, ref string ItemName, ref decimal Quantity, ref string Unit, ref decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Inventory WHERE ItemID = @ItemID";
+            string query = "SELECT * FROM Inventory WHERE InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -30,9 +30,10 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                Name = (string)reader["Name"];
+                                ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
                                 LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
@@ -55,17 +56,17 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByItemID(int ItemID, ref string Name, ref decimal Quantity, ref string Unit, ref DateTime LastUpdate)
+        public static bool GetInventoryByInventoryID(int InventoryID, ref string ItemName, ref decimal Quantity, ref string Unit, ref decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Inventory WHERE ItemID = @ItemID";
+            string query = "SELECT * FROM Inventory WHERE InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -74,9 +75,10 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                Name = (string)reader["Name"];
+                                ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
                                 LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
@@ -99,17 +101,17 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByName(ref int ItemID, string Name, ref decimal Quantity, ref string Unit, ref DateTime LastUpdate)
+        public static bool GetInventoryByItemName(ref int InventoryID, string ItemName, ref decimal Quantity, ref string Unit, ref decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Inventory WHERE Name = @Name";
+            string query = "SELECT * FROM Inventory WHERE ItemName = @ItemName";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@ItemName", ItemName);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -118,9 +120,10 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                ItemID = (int)reader["ItemID"];
+                                InventoryID = (int)reader["InventoryID"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
                                 LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
@@ -143,7 +146,7 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByQuantity(ref int ItemID, ref string Name, decimal Quantity, ref string Unit, ref DateTime LastUpdate)
+        public static bool GetInventoryByQuantity(ref int InventoryID, ref string ItemName, decimal Quantity, ref string Unit, ref decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
             string query = "SELECT * FROM Inventory WHERE Quantity = @Quantity";
@@ -162,9 +165,10 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                ItemID = (int)reader["ItemID"];
-                                Name = (string)reader["Name"];
+                                InventoryID = (int)reader["InventoryID"];
+                                ItemName = (string)reader["ItemName"];
                                 Unit = (string)reader["Unit"];
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
                                 LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
@@ -187,7 +191,7 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByUnit(ref int ItemID, ref string Name, ref decimal Quantity, string Unit, ref DateTime LastUpdate)
+        public static bool GetInventoryByUnit(ref int InventoryID, ref string ItemName, ref decimal Quantity, string Unit, ref decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
             string query = "SELECT * FROM Inventory WHERE Unit = @Unit";
@@ -206,9 +210,10 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                ItemID = (int)reader["ItemID"];
-                                Name = (string)reader["Name"];
+                                InventoryID = (int)reader["InventoryID"];
+                                ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
                                 LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
@@ -231,17 +236,17 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByLastUpdate(ref int ItemID, ref string Name, ref decimal Quantity, ref string Unit, DateTime LastUpdate)
+        public static bool GetInventoryByReorderLevel(ref int InventoryID, ref string ItemName, ref decimal Quantity, ref string Unit, decimal ReorderLevel, ref DateTime LastUpdate)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Inventory WHERE LastUpdate = @LastUpdate";
+            string query = "SELECT * FROM Inventory WHERE ReorderLevel = @ReorderLevel";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
+                        command.Parameters.AddWithValue("@ReorderLevel", ReorderLevel);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -250,10 +255,11 @@ namespace ClsInventoryDataAccessLayer
                             {
                                 isFound = true;
 
-                                ItemID = (int)reader["ItemID"];
-                                Name = (string)reader["Name"];
+                                InventoryID = (int)reader["InventoryID"];
+                                ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
+                                LastUpdate = (DateTime)reader["LastUpdate"];
                             }
                             else
                             {
@@ -275,11 +281,56 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static int AddNewItem(string Name, decimal Quantity, string Unit, DateTime LastUpdate)
+        public static bool GetInventoryByLastUpdate(ref int InventoryID, ref string ItemName, ref decimal Quantity, ref string Unit, ref decimal ReorderLevel, DateTime LastUpdate)
         {
-            int ItemID = -1;
-            string query = @"INSERT INTO Inventory (Name, Quantity, Unit, LastUpdate)
-                            VALUES (@Name, @Quantity, @Unit, @LastUpdate)
+            bool isFound = false;
+            string query = "SELECT * FROM Inventory WHERE LastUpdate = @LastUpdate";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                InventoryID = (int)reader["InventoryID"];
+                                ItemName = (string)reader["ItemName"];
+                                Quantity = Convert.ToDecimal(reader["Quantity"]);
+                                Unit = (string)reader["Unit"];
+                                ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
+                            }
+                            else
+                            {
+                                isFound = false;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static int AddNewInventory(string ItemName, decimal Quantity, string Unit, decimal ReorderLevel, DateTime LastUpdate)
+        {
+            int InventoryID = -1;
+            string query = @"INSERT INTO Inventory (ItemName, Quantity, Unit, ReorderLevel, LastUpdate)
+                            VALUES (@ItemName, @Quantity, @Unit, @ReorderLevel, @LastUpdate)
                             SELECT SCOPE_IDENTITY();";
             try
             {
@@ -288,15 +339,16 @@ namespace ClsInventoryDataAccessLayer
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@ItemName", ItemName);
                         command.Parameters.AddWithValue("@Quantity", Quantity);
                         command.Parameters.AddWithValue("@Unit", Unit);
+                        command.Parameters.AddWithValue("@ReorderLevel", ReorderLevel);
                         command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
                         connection.Open();
                         object result = command.ExecuteScalar();
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
                         {
-                            ItemID = insertedID;
+                            InventoryID = insertedID;
                         }
                     }
                 }
@@ -310,18 +362,19 @@ namespace ClsInventoryDataAccessLayer
 
             }
 
-            return ItemID;
+            return InventoryID;
         }
-        public static bool UpdateItem(int ItemID, string Name, decimal Quantity, string Unit, DateTime LastUpdate)
+        public static bool UpdateInventory(int InventoryID, string ItemName, decimal Quantity, string Unit, decimal ReorderLevel, DateTime LastUpdate)
         {
             int rowsAffected = 0;
             string query = @"UPDATE Inventory  
                                         SET 
-                                        Name = @Name, 
+                                        ItemName = @ItemName, 
                             Quantity = @Quantity, 
                             Unit = @Unit, 
+                            ReorderLevel = @ReorderLevel, 
                             LastUpdate = @LastUpdate
-                            WHERE ItemID = @ItemID";
+                            WHERE InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
@@ -329,10 +382,11 @@ namespace ClsInventoryDataAccessLayer
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
+                        command.Parameters.AddWithValue("@ItemName", ItemName);
                         command.Parameters.AddWithValue("@Quantity", Quantity);
                         command.Parameters.AddWithValue("@Unit", Unit);
+                        command.Parameters.AddWithValue("@ReorderLevel", ReorderLevel);
                         command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
@@ -351,18 +405,18 @@ namespace ClsInventoryDataAccessLayer
 
             return (rowsAffected > 0);
         }
-        public static bool DeleteItem(int ItemID)
+        public static bool DeleteInventory(int InventoryID)
         {
             int rowsAffected = 0;
             string query = @"Delete Inventory 
-                                where ItemID = @ItemID";
+                                where InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
@@ -377,17 +431,17 @@ namespace ClsInventoryDataAccessLayer
             }
             return (rowsAffected > 0);
         }
-        public static bool IsItemExist(int ItemID)
+        public static bool IsInventoryExist(int InventoryID)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Inventory WHERE ItemID = @ItemID";
+            string query = "SELECT Found=1 FROM Inventory WHERE InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -407,17 +461,17 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByItemID(int ItemID)
+        public static bool IsInventoryExistByInventoryID(int InventoryID)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Inventory WHERE ItemID = @ItemID";
+            string query = "SELECT Found=1 FROM Inventory WHERE InventoryID = @InventoryID";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        command.Parameters.AddWithValue("@InventoryID", InventoryID);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -437,17 +491,17 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByName(string Name)
+        public static bool IsInventoryExistByItemName(string ItemName)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Inventory WHERE Name = @Name";
+            string query = "SELECT Found=1 FROM Inventory WHERE ItemName = @ItemName";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Name", Name);
+                        command.Parameters.AddWithValue("@ItemName", ItemName);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -467,7 +521,7 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByQuantity(decimal Quantity)
+        public static bool IsInventoryExistByQuantity(decimal Quantity)
         {
             bool isFound = false;
             string query = "SELECT Found=1 FROM Inventory WHERE Quantity = @Quantity";
@@ -497,7 +551,7 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByUnit(string Unit)
+        public static bool IsInventoryExistByUnit(string Unit)
         {
             bool isFound = false;
             string query = "SELECT Found=1 FROM Inventory WHERE Unit = @Unit";
@@ -527,7 +581,37 @@ namespace ClsInventoryDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByLastUpdate(DateTime LastUpdate)
+        public static bool IsInventoryExistByReorderLevel(decimal ReorderLevel)
+        {
+            bool isFound = false;
+            string query = "SELECT Found=1 FROM Inventory WHERE ReorderLevel = @ReorderLevel";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ReorderLevel", ReorderLevel);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            isFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+
+            }
+
+            return isFound;
+        }
+        public static bool IsInventoryExistByLastUpdate(DateTime LastUpdate)
         {
             bool isFound = false;
             string query = "SELECT Found=1 FROM Inventory WHERE LastUpdate = @LastUpdate";

@@ -15,38 +15,38 @@ namespace ClsOrderBusinessLayer
         public int OrderID { set; get; }
         public int TableID { set; get; }
         public int UserID { set; get; }
-        public string OrderType { set; get; }
+        public DateTime OrderDate { set; get; }
         public string Status { set; get; }
-        public DateTime CreatedAt { set; get; }
+        public string Notes { set; get; }
 
         public ClsOrder()
         {
             this.OrderID = -1;
             this.TableID = -1;
             this.UserID = -1;
-            this.OrderType = "";
+            this.OrderDate = DateTime.MinValue;
             this.Status = "";
-            this.CreatedAt = DateTime.MinValue;
+            this.Notes = "";
             Mode = enMode.AddNew;
         }
-        private ClsOrder(int OrderID, int TableID, int UserID, string OrderType, string Status, DateTime CreatedAt)
+        private ClsOrder(int OrderID, int TableID, int UserID, DateTime OrderDate, string Status, string Notes)
         {
             this.OrderID = OrderID;
             this.TableID = TableID;
             this.UserID = UserID;
-            this.OrderType = OrderType;
+            this.OrderDate = OrderDate;
             this.Status = Status;
-            this.CreatedAt = CreatedAt;
+            this.Notes = Notes;
             Mode = enMode.Update;
         }
         private bool _AddNewOrder()
         {
-            this.OrderID = (int)ClsOrderData.AddNewOrder(this.TableID, this.UserID, this.OrderType, this.Status, this.CreatedAt);
+            this.OrderID = (int)ClsOrderData.AddNewOrder(this.TableID, this.UserID, this.OrderDate, this.Status, this.Notes);
             return (this.OrderID != -1);
         }
         private bool _UpdateOrder()
         {
-            return ClsOrderData.UpdateOrder(this.OrderID, this.TableID, this.UserID, this.OrderType, this.Status, this.CreatedAt);
+            return ClsOrderData.UpdateOrder(this.OrderID, this.TableID, this.UserID, this.OrderDate, this.Status, this.Notes);
         }
         public static bool DeleteOrder(int OrderID)
         {
@@ -64,30 +64,30 @@ namespace ClsOrderBusinessLayer
         {
             return ClsOrderData.IsOrderExistByUserID(UserID);
         }
-        public static bool IsOrderExistByOrderType(string OrderType)
+        public static bool IsOrderExistByOrderDate(DateTime OrderDate)
         {
-            return ClsOrderData.IsOrderExistByOrderType(OrderType);
+            return ClsOrderData.IsOrderExistByOrderDate(OrderDate);
         }
         public static bool IsOrderExistByStatus(string Status)
         {
             return ClsOrderData.IsOrderExistByStatus(Status);
         }
-        public static bool IsOrderExistByCreatedAt(DateTime CreatedAt)
+        public static bool IsOrderExistByNotes(string Notes)
         {
-            return ClsOrderData.IsOrderExistByCreatedAt(CreatedAt);
+            return ClsOrderData.IsOrderExistByNotes(Notes);
         }
         public static ClsOrder FindByOrderID(int OrderID)
         {
             int TableID = -1;
             int UserID = -1;
-            string OrderType = "";
+            DateTime OrderDate = DateTime.MinValue;
             string Status = "";
-            DateTime CreatedAt = DateTime.MinValue;
+            string Notes = "";
 
-            bool IsFound = ClsOrderData.GetOrderByOrderID(OrderID, ref TableID, ref UserID, ref OrderType, ref Status, ref CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByOrderID(OrderID, ref TableID, ref UserID, ref OrderDate, ref Status, ref Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }
@@ -95,14 +95,14 @@ namespace ClsOrderBusinessLayer
         {
             int OrderID = -1;
             int UserID = -1;
-            string OrderType = "";
+            DateTime OrderDate = DateTime.MinValue;
             string Status = "";
-            DateTime CreatedAt = DateTime.MinValue;
+            string Notes = "";
 
-            bool IsFound = ClsOrderData.GetOrderByTableID(ref OrderID, TableID, ref UserID, ref OrderType, ref Status, ref CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByTableID(ref OrderID, TableID, ref UserID, ref OrderDate, ref Status, ref Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }
@@ -110,29 +110,29 @@ namespace ClsOrderBusinessLayer
         {
             int OrderID = -1;
             int TableID = -1;
-            string OrderType = "";
+            DateTime OrderDate = DateTime.MinValue;
             string Status = "";
-            DateTime CreatedAt = DateTime.MinValue;
+            string Notes = "";
 
-            bool IsFound = ClsOrderData.GetOrderByUserID(ref OrderID, ref TableID, UserID, ref OrderType, ref Status, ref CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByUserID(ref OrderID, ref TableID, UserID, ref OrderDate, ref Status, ref Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }
-        public static ClsOrder FindByOrderType(string OrderType)
+        public static ClsOrder FindByOrderDate(DateTime OrderDate)
         {
             int OrderID = -1;
             int TableID = -1;
             int UserID = -1;
             string Status = "";
-            DateTime CreatedAt = DateTime.MinValue;
+            string Notes = "";
 
-            bool IsFound = ClsOrderData.GetOrderByOrderType(ref OrderID, ref TableID, ref UserID, OrderType, ref Status, ref CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByOrderDate(ref OrderID, ref TableID, ref UserID, OrderDate, ref Status, ref Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }
@@ -141,28 +141,28 @@ namespace ClsOrderBusinessLayer
             int OrderID = -1;
             int TableID = -1;
             int UserID = -1;
-            string OrderType = "";
-            DateTime CreatedAt = DateTime.MinValue;
+            DateTime OrderDate = DateTime.MinValue;
+            string Notes = "";
 
-            bool IsFound = ClsOrderData.GetOrderByStatus(ref OrderID, ref TableID, ref UserID, ref OrderType, Status, ref CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByStatus(ref OrderID, ref TableID, ref UserID, ref OrderDate, Status, ref Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }
-        public static ClsOrder FindByCreatedAt(DateTime CreatedAt)
+        public static ClsOrder FindByNotes(string Notes)
         {
             int OrderID = -1;
             int TableID = -1;
             int UserID = -1;
-            string OrderType = "";
+            DateTime OrderDate = DateTime.MinValue;
             string Status = "";
 
-            bool IsFound = ClsOrderData.GetOrderByCreatedAt(ref OrderID, ref TableID, ref UserID, ref OrderType, ref Status, CreatedAt);
+            bool IsFound = ClsOrderData.GetOrderByNotes(ref OrderID, ref TableID, ref UserID, ref OrderDate, ref Status, Notes);
 
             if (IsFound)
-                return new ClsOrder(OrderID, TableID, UserID, OrderType, Status, CreatedAt);
+                return new ClsOrder(OrderID, TableID, UserID, OrderDate, Status, Notes);
             else
                 return null;
         }

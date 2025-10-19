@@ -1,0 +1,6 @@
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\obj\Debug\ClsConnectionStringLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\obj\Debug\ClsConnectionStringLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\obj\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\ConnectionString\ClsConnectionStringLayer\obj\Debug\ClsConnectionStringLayer.pdb

@@ -6,43 +6,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClsItemBusinessLayer
+namespace ClsMenuItemBusinessLayer
 {
     public class ClsItem
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-
-
         public int ItemID { set; get; }
-        public decimal Price { set; get; }
-        public bool Available { set; get; }
         public int CategoryID { set; get; }
+        public string ItemName { set; get; }
+        public string Description { set; get; }
+        public decimal Price { set; get; }
+        public bool Availability { set; get; }
+        public string ImagePath { set; get; }
+        public DateTime CreatedAt { set; get; }
+        public DateTime Updated { set; get; }
 
         public ClsItem()
         {
             this.ItemID = -1;
-            this.Price = -1;
-            this.Available = false;
             this.CategoryID = -1;
+            this.ItemName = "";
+            this.Description = "";
+            this.Price = -1;
+            this.Availability = false;
+            this.ImagePath = "";
+            this.CreatedAt = DateTime.MinValue;
+            this.Updated = DateTime.MinValue;
             Mode = enMode.AddNew;
         }
-        private ClsItem(int ItemID, decimal Price, bool Available, int CategoryID)
+        private ClsItem(int ItemID, int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime Updated)
         {
             this.ItemID = ItemID;
-            this.Price = Price;
-            this.Available = Available;
             this.CategoryID = CategoryID;
+            this.ItemName = ItemName;
+            this.Description = Description;
+            this.Price = Price;
+            this.Availability = Availability;
+            this.ImagePath = ImagePath;
+            this.CreatedAt = CreatedAt;
+            this.Updated = Updated;
             Mode = enMode.Update;
         }
         private bool _AddNewItem()
         {
-            this.ItemID = (int)ClsItemData.AddNewItem(this.Price, this.Available, this.CategoryID);
+            this.ItemID = (int)ClsItemData.AddNewItem(this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.Updated);
             return (this.ItemID != -1);
         }
         private bool _UpdateItem()
         {
-            return ClsItemData.UpdateItem(this.ItemID, this.Price, this.Available, this.CategoryID);
+            return ClsItemData.UpdateItem(this.ItemID, this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.Updated);
         }
         public static bool DeleteItem(int ItemID)
         {
@@ -52,67 +65,197 @@ namespace ClsItemBusinessLayer
         {
             return ClsItemData.IsItemExistByItemID(ItemID);
         }
-        public static bool IsItemExistByPrice(decimal Price)
-        {
-            return ClsItemData.IsItemExistByPrice(Price);
-        }
-        public static bool IsItemExistByAvailable(bool Available)
-        {
-            return ClsItemData.IsItemExistByAvailable(Available);
-        }
         public static bool IsItemExistByCategoryID(int CategoryID)
         {
             return ClsItemData.IsItemExistByCategoryID(CategoryID);
         }
+        public static bool IsItemExistByItemName(string ItemName)
+        {
+            return ClsItemData.IsItemExistByItemName(ItemName);
+        }
+        public static bool IsItemExistByDescription(string Description)
+        {
+            return ClsItemData.IsItemExistByDescription(Description);
+        }
+        public static bool IsItemExistByPrice(decimal Price)
+        {
+            return ClsItemData.IsItemExistByPrice(Price);
+        }
+        public static bool IsItemExistByAvailability(bool Availability)
+        {
+            return ClsItemData.IsItemExistByAvailability(Availability);
+        }
+        public static bool IsItemExistByImagePath(string ImagePath)
+        {
+            return ClsItemData.IsItemExistByImagePath(ImagePath);
+        }
+        public static bool IsItemExistByCreatedAt(DateTime CreatedAt)
+        {
+            return ClsItemData.IsItemExistByCreatedAt(CreatedAt);
+        }
+        public static bool IsItemExistByUpdated(DateTime Updated)
+        {
+            return ClsItemData.IsItemExistByUpdated(Updated);
+        }
         public static ClsItem FindByItemID(int ItemID)
         {
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
             decimal Price = -1;
-            bool Available = false;
-            int CategoryID = -1;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByItemID(ItemID, ref Price, ref Available, ref CategoryID);
-
-            if (IsFound)
-                return new ClsItem(ItemID, Price, Available, CategoryID);
-            else
-                return null;
-        }
-        public static ClsItem FindByPrice(decimal Price)
-        {
-            int ItemID = -1;
-            bool Available = false;
-            int CategoryID = -1;
-
-            bool IsFound = ClsItemData.GetItemByPrice(ref ItemID, Price, ref Available, ref CategoryID);
+            bool IsFound = ClsItemData.GetItemByItemID(ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
 
             if (IsFound)
-                return new ClsItem(ItemID, Price, Available, CategoryID);
-            else
-                return null;
-        }
-        public static ClsItem FindByAvailable(bool Available)
-        {
-            int ItemID = -1;
-            decimal Price = -1;
-            int CategoryID = -1;
-
-            bool IsFound = ClsItemData.GetItemByAvailable(ref ItemID, ref Price, Available, ref CategoryID);
-
-            if (IsFound)
-                return new ClsItem(ItemID, Price, Available, CategoryID);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
             else
                 return null;
         }
         public static ClsItem FindByCategoryID(int CategoryID)
         {
             int ItemID = -1;
+            string ItemName = "";
+            string Description = "";
             decimal Price = -1;
-            bool Available = false;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByCategoryID(ref ItemID, ref Price, ref Available, CategoryID);
+            bool IsFound = ClsItemData.GetItemByCategoryID(ref ItemID, CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
 
             if (IsFound)
-                return new ClsItem(ItemID, Price, Available, CategoryID);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByItemName(string ItemName)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string Description = "";
+            decimal Price = -1;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByItemName(ref ItemID, ref CategoryID, ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByDescription(string Description)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            decimal Price = -1;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByDescription(ref ItemID, ref CategoryID, ref ItemName, Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByPrice(decimal Price)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByPrice(ref ItemID, ref CategoryID, ref ItemName, ref Description, Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByAvailability(bool Availability)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
+            decimal Price = -1;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByAvailability(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, Availability, ref ImagePath, ref CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByImagePath(string ImagePath)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
+            decimal Price = -1;
+            bool Availability = false;
+            DateTime CreatedAt = DateTime.MinValue;
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByImagePath(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ImagePath, ref CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByCreatedAt(DateTime CreatedAt)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
+            decimal Price = -1;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime Updated = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByCreatedAt(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, CreatedAt, ref Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+            else
+                return null;
+        }
+        public static ClsItem FindByUpdated(DateTime Updated)
+        {
+            int ItemID = -1;
+            int CategoryID = -1;
+            string ItemName = "";
+            string Description = "";
+            decimal Price = -1;
+            bool Availability = false;
+            string ImagePath = "";
+            DateTime CreatedAt = DateTime.MinValue;
+
+            bool IsFound = ClsItemData.GetItemByUpdated(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, Updated);
+
+            if (IsFound)
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
             else
                 return null;
         }
@@ -136,9 +279,9 @@ namespace ClsItemBusinessLayer
             }
             return false;
         }
-        public static DataTable GetMenu()
+        public static DataTable GetMenuItems()
         {
-            return ClsItemData.GetAllMenu();
+            return ClsItemData.GetAllMenuItems();
         }
     }
 }

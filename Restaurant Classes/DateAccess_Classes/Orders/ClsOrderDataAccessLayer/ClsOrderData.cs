@@ -11,7 +11,7 @@ namespace ClsOrderDataAccessLayer
 {
     public class ClsOrderData
     {
-        public static bool GetOrderByID(int OrderID, ref int TableID, ref int UserID, ref string OrderType, ref string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByID(int OrderID, ref int TableID, ref int UserID, ref DateTime OrderDate, ref string Status, ref string Notes)
         {
             bool isFound = false;
             string query = "SELECT * FROM Orders WHERE OrderID = @OrderID";
@@ -32,9 +32,14 @@ namespace ClsOrderDataAccessLayer
 
                                 TableID = (int)reader["TableID"];
                                 UserID = (int)reader["UserID"];
-                                OrderType = (string)reader["OrderType"];
+                                OrderDate = (DateTime)reader["OrderDate"];
                                 Status = (string)reader["Status"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -56,7 +61,7 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByOrderID(int OrderID, ref int TableID, ref int UserID, ref string OrderType, ref string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByOrderID(int OrderID, ref int TableID, ref int UserID, ref DateTime OrderDate, ref string Status, ref string Notes)
         {
             bool isFound = false;
             string query = "SELECT * FROM Orders WHERE OrderID = @OrderID";
@@ -77,9 +82,14 @@ namespace ClsOrderDataAccessLayer
 
                                 TableID = (int)reader["TableID"];
                                 UserID = (int)reader["UserID"];
-                                OrderType = (string)reader["OrderType"];
+                                OrderDate = (DateTime)reader["OrderDate"];
                                 Status = (string)reader["Status"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -101,7 +111,7 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByTableID(ref int OrderID, int TableID, ref int UserID, ref string OrderType, ref string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByTableID(ref int OrderID, int TableID, ref int UserID, ref DateTime OrderDate, ref string Status, ref string Notes)
         {
             bool isFound = false;
             string query = "SELECT * FROM Orders WHERE TableID = @TableID";
@@ -122,9 +132,14 @@ namespace ClsOrderDataAccessLayer
 
                                 OrderID = (int)reader["OrderID"];
                                 UserID = (int)reader["UserID"];
-                                OrderType = (string)reader["OrderType"];
+                                OrderDate = (DateTime)reader["OrderDate"];
                                 Status = (string)reader["Status"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -146,7 +161,7 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByUserID(ref int OrderID, ref int TableID, int UserID, ref string OrderType, ref string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByUserID(ref int OrderID, ref int TableID, int UserID, ref DateTime OrderDate, ref string Status, ref string Notes)
         {
             bool isFound = false;
             string query = "SELECT * FROM Orders WHERE UserID = @UserID";
@@ -167,9 +182,14 @@ namespace ClsOrderDataAccessLayer
 
                                 OrderID = (int)reader["OrderID"];
                                 TableID = (int)reader["TableID"];
-                                OrderType = (string)reader["OrderType"];
+                                OrderDate = (DateTime)reader["OrderDate"];
                                 Status = (string)reader["Status"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -191,17 +211,17 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByOrderType(ref int OrderID, ref int TableID, ref int UserID, string OrderType, ref string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByOrderDate(ref int OrderID, ref int TableID, ref int UserID, DateTime OrderDate, ref string Status, ref string Notes)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Orders WHERE OrderType = @OrderType";
+            string query = "SELECT * FROM Orders WHERE OrderDate = @OrderDate";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@OrderType", OrderType);
+                        command.Parameters.AddWithValue("@OrderDate", OrderDate);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -214,7 +234,12 @@ namespace ClsOrderDataAccessLayer
                                 TableID = (int)reader["TableID"];
                                 UserID = (int)reader["UserID"];
                                 Status = (string)reader["Status"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -236,7 +261,7 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByStatus(ref int OrderID, ref int TableID, ref int UserID, ref string OrderType, string Status, ref DateTime CreatedAt)
+        public static bool GetOrderByStatus(ref int OrderID, ref int TableID, ref int UserID, ref DateTime OrderDate, string Status, ref string Notes)
         {
             bool isFound = false;
             string query = "SELECT * FROM Orders WHERE Status = @Status";
@@ -258,8 +283,13 @@ namespace ClsOrderDataAccessLayer
                                 OrderID = (int)reader["OrderID"];
                                 TableID = (int)reader["TableID"];
                                 UserID = (int)reader["UserID"];
-                                OrderType = (string)reader["OrderType"];
-                                CreatedAt = (DateTime)reader["CreatedAt"];
+                                OrderDate = (DateTime)reader["OrderDate"];
+
+                                if (reader["Notes"] != DBNull.Value)
+                                    Notes = (string)reader["Notes"];
+                                else
+                                    Notes = "";
+
                             }
                             else
                             {
@@ -281,17 +311,17 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool GetOrderByCreatedAt(ref int OrderID, ref int TableID, ref int UserID, ref string OrderType, ref string Status, DateTime CreatedAt)
+        public static bool GetOrderByNotes(ref int OrderID, ref int TableID, ref int UserID, ref DateTime OrderDate, ref string Status, string Notes)
         {
             bool isFound = false;
-            string query = "SELECT * FROM Orders WHERE CreatedAt = @CreatedAt";
+            string query = "SELECT * FROM Orders WHERE Notes = @Notes";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        command.Parameters.AddWithValue("@Notes", Notes);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -303,7 +333,7 @@ namespace ClsOrderDataAccessLayer
                                 OrderID = (int)reader["OrderID"];
                                 TableID = (int)reader["TableID"];
                                 UserID = (int)reader["UserID"];
-                                OrderType = (string)reader["OrderType"];
+                                OrderDate = (DateTime)reader["OrderDate"];
                                 Status = (string)reader["Status"];
                             }
                             else
@@ -326,11 +356,11 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static int AddNewOrder(int TableID, int UserID, string OrderType, string Status, DateTime CreatedAt)
+        public static int AddNewOrder(int TableID, int UserID, DateTime OrderDate, string Status, string Notes)
         {
             int OrderID = -1;
-            string query = @"INSERT INTO Orders (TableID, UserID, OrderType, Status, CreatedAt)
-                            VALUES (@TableID, @UserID, @OrderType, @Status, @CreatedAt)
+            string query = @"INSERT INTO Orders (TableID, UserID, OrderDate, Status, Notes)
+                            VALUES (@TableID, @UserID, @OrderDate, @Status, @Notes)
                             SELECT SCOPE_IDENTITY();";
             try
             {
@@ -341,9 +371,13 @@ namespace ClsOrderDataAccessLayer
 
                         command.Parameters.AddWithValue("@TableID", TableID);
                         command.Parameters.AddWithValue("@UserID", UserID);
-                        command.Parameters.AddWithValue("@OrderType", OrderType);
+                        command.Parameters.AddWithValue("@OrderDate", OrderDate);
                         command.Parameters.AddWithValue("@Status", Status);
-                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+
+                        if (Notes != "")
+                            command.Parameters.AddWithValue("@Notes", Notes);
+                        else
+                            command.Parameters.AddWithValue("@Notes", DBNull.Value);
                         connection.Open();
                         object result = command.ExecuteScalar();
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
@@ -364,16 +398,16 @@ namespace ClsOrderDataAccessLayer
 
             return OrderID;
         }
-        public static bool UpdateOrder(int OrderID, int TableID, int UserID, string OrderType, string Status, DateTime CreatedAt)
+        public static bool UpdateOrder(int OrderID, int TableID, int UserID, DateTime OrderDate, string Status, string Notes)
         {
             int rowsAffected = 0;
             string query = @"UPDATE Orders  
                                         SET 
                                         TableID = @TableID, 
                             UserID = @UserID, 
-                            OrderType = @OrderType, 
+                            OrderDate = @OrderDate, 
                             Status = @Status, 
-                            CreatedAt = @CreatedAt
+                            Notes = @Notes
                             WHERE OrderID = @OrderID";
             try
             {
@@ -385,9 +419,9 @@ namespace ClsOrderDataAccessLayer
                         command.Parameters.AddWithValue("@OrderID", OrderID);
                         command.Parameters.AddWithValue("@TableID", TableID);
                         command.Parameters.AddWithValue("@UserID", UserID);
-                        command.Parameters.AddWithValue("@OrderType", OrderType);
+                        command.Parameters.AddWithValue("@OrderDate", OrderDate);
                         command.Parameters.AddWithValue("@Status", Status);
-                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        command.Parameters.AddWithValue("@Notes", Notes);
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
@@ -551,17 +585,17 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool IsOrderExistByOrderType(string OrderType)
+        public static bool IsOrderExistByOrderDate(DateTime OrderDate)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Orders WHERE OrderType = @OrderType";
+            string query = "SELECT Found=1 FROM Orders WHERE OrderDate = @OrderDate";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@OrderType", OrderType);
+                        command.Parameters.AddWithValue("@OrderDate", OrderDate);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -611,17 +645,17 @@ namespace ClsOrderDataAccessLayer
 
             return isFound;
         }
-        public static bool IsOrderExistByCreatedAt(DateTime CreatedAt)
+        public static bool IsOrderExistByNotes(string Notes)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM Orders WHERE CreatedAt = @CreatedAt";
+            string query = "SELECT Found=1 FROM Orders WHERE Notes = @Notes";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        command.Parameters.AddWithValue("@Notes", Notes);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

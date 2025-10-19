@@ -1,0 +1,11 @@
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsInvetoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsInvetoryBusinessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsInventoryDataAccessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsConnectionStringLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsInventoryDataAccessLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\bin\Debug\ClsConnectionStringLayer.pdb
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\obj\Debug\ClsInvetoryBusinessLayer.csproj.AssemblyReference.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\obj\Debug\ClsInvetoryBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\obj\Debug\ClsInvet.099B4324.Up2Date
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\obj\Debug\ClsInvetoryBusinessLayer.dll
+C:\Restaurant-System\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\obj\Debug\ClsInvetoryBusinessLayer.pdb

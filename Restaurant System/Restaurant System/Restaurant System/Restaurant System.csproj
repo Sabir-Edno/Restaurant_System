@@ -36,8 +36,17 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Password_Lib">
+      <HintPath>..\..\..\..\C#_My_Libraries\Password_Lib\Password_Lib\Password_Lib\bin\Debug\Password_Lib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,14 +58,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CtrlItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlItem.Designer.cs">
+      <DependentUpon>CtrlItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrAddOrEditUserScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrrAddOrEditUserScreen.Designer.cs">
+      <DependentUpon>FrrAddOrEditUserScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDashboardScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDashboardScreen.Designer.cs">
+      <DependentUpon>FrrDashboardScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrPOSScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrPOSScreen.Designer.cs">
+      <DependentUpon>FrrPOSScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrUserManagmentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrUserManagmentScreen.Designer.cs">
+      <DependentUpon>FrrUserManagmentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login Screen\FrrLoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Screen\FrrLoginScreen.Designer.cs">
+      <DependentUpon>FrrLoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CtrlItem.resx">
+      <DependentUpon>CtrlItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrAddOrEditUserScreen.resx">
+      <DependentUpon>FrrAddOrEditUserScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDashboardScreen.resx">
+      <DependentUpon>FrrDashboardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrPOSScreen.resx">
+      <DependentUpon>FrrPOSScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrUserManagmentScreen.resx">
+      <DependentUpon>FrrUserManagmentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Screen\FrrLoginScreen.resx">
+      <DependentUpon>FrrLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,8 +122,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,17 +140,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\C#_My_Libraries\Validation_Lib\ValidationLib\ValidationLib\ValidationLibLayer.csproj">
+      <Project>{de11025c-9a87-4dc3-b16c-44e7943239b7}</Project>
+      <Name>ValidationLibLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Bills\ClsBillBusinessLayer\ClsBillBusinessLayer.csproj">
+      <Project>{f05e5633-d481-420f-af70-1506dc4613d2}</Project>
+      <Name>ClsBillBusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Categories\ClsCategoryBusinessLayer\ClsCategoryBusinessLayer.csproj">
       <Project>{f97ef3d9-75ce-4bdf-8293-d6bd801fc57f}</Project>
       <Name>ClsCategoryBusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\ClsInvetoryBusinessLayer.csproj">
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Inventory\ClsInvetoryBusinessLayer\ClsInventoryBusinessLayer.csproj">
       <Project>{4967593e-e4af-4eaf-9246-7da17be2dfa5}</Project>
-      <Name>ClsInvetoryBusinessLayer</Name>
+      <Name>ClsInventoryBusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Menu\ClsMenuBusinessLayer\ClsItemBusinessLayer.csproj">
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Menu\ClsMenuBusinessLayer\ClsIMenuItemBusinessLayer.csproj">
       <Project>{24e40407-8dd5-46aa-af8c-63b803e1eb75}</Project>
-      <Name>ClsItemBusinessLayer</Name>
+      <Name>ClsIMenuItemBusinessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\OrderDetail\ClsOrderDetailBusinessLayer\ClsOrderDetailBusinessLayer.csproj">
       <Project>{d1f7f996-887f-40dd-84bd-3f3da5dad5de}</Project>
@@ -101,9 +168,13 @@
       <Project>{1281eb87-2203-4369-b4d7-503d227fc7f9}</Project>
       <Name>ClsOrderBusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Payments\ClsPaymentBusinessLayer\ClsPaymentBusinessLayer.csproj">
-      <Project>{ec6813e6-0441-4e02-928d-0779f9ff9137}</Project>
-      <Name>ClsPaymentBusinessLayer</Name>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\PaymentMethods\ClsPaymentMethodBusinessLayer\ClsPaymentMethodBusinessLayer.csproj">
+      <Project>{80becfeb-cbbd-4d43-81d8-419b369df692}</Project>
+      <Name>ClsPaymentMethodBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Roles\ClsRoleBusinessLayer\ClsRoleBusinessLayer.csproj">
+      <Project>{693ed6d9-3b31-484e-9b9f-f0b253bdedea}</Project>
+      <Name>ClsRoleBusinessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Restaurant Classes\Business_Classes\Tables\ClsTableBusinessLayer\ClsTableBusinessLayer.csproj">
       <Project>{2ce110ff-16e5-4dbd-9d6a-04ffe020e404}</Project>
@@ -113,6 +184,13 @@
       <Project>{eae9702f-5414-4a76-8eac-5940d987986f}</Project>
       <Name>ClsUserBusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Restaurant Classes\Global_Classes\ClsGlobalUser\ClsGlobalUserLayer\ClsGlobalUserLayer.csproj">
+      <Project>{484e3f75-316c-4535-a941-bfd5adbf4fea}</Project>
+      <Name>ClsGlobalUserLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\focus %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
