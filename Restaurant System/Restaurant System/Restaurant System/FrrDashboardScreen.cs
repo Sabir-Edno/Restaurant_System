@@ -42,5 +42,15 @@ namespace Restaurant_System
             PanelCenter.Controls.Add(frr);
             frr.Show();
         }
+
+        private void btnTableManagement_Click(object sender, EventArgs e)
+        {
+            PanelCenter.Controls.Clear();
+            FrrTableManagementScreen frr = new FrrTableManagementScreen();
+            frr.TopLevel = false;
+            frr.BringToFront();
+            PanelCenter.Controls.Add(frr);
+            frr.Show();
+        }
     }
 }

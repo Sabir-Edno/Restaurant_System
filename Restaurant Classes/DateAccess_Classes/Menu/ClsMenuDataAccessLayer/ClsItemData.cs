@@ -31,12 +31,7 @@ namespace ClsMenuDataAccessLayer
                                 isFound = true;
 
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -99,12 +94,7 @@ namespace ClsMenuDataAccessLayer
                                 isFound = true;
 
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -167,12 +157,7 @@ namespace ClsMenuDataAccessLayer
                                 isFound = true;
 
                                 ItemID = (int)reader["ItemID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -299,12 +284,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
                                 Price = Convert.ToDecimal(reader["Price"]);
                                 Availability = (bool)reader["Availability"];
 
@@ -362,12 +342,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -430,12 +405,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -498,12 +468,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -561,12 +526,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -629,12 +589,7 @@ namespace ClsMenuDataAccessLayer
 
                                 ItemID = (int)reader["ItemID"];
                                 CategoryID = (int)reader["CategoryID"];
-
-                                if (reader["ItemName"] != DBNull.Value)
-                                    ItemName = (string)reader["ItemName"];
-                                else
-                                    ItemName = "";
-
+                                ItemName = (string)reader["ItemName"];
 
                                 if (reader["Description"] != DBNull.Value)
                                     Description = (string)reader["Description"];
@@ -685,11 +640,7 @@ namespace ClsMenuDataAccessLayer
                     {
 
                         command.Parameters.AddWithValue("@CategoryID", CategoryID);
-
-                        if (ItemName != "")
-                            command.Parameters.AddWithValue("@ItemName", ItemName);
-                        else
-                            command.Parameters.AddWithValue("@ItemName", DBNull.Value);
+                        command.Parameters.AddWithValue("@ItemName", ItemName);
 
                         if (Description != "")
                             command.Parameters.AddWithValue("@Description", Description);
@@ -1132,6 +1083,34 @@ namespace ClsMenuDataAccessLayer
             }
 
             return dt;
+        }
+
+        public static bool IsItemReferenceToAnyOrderDetailByID(int ItemID)
+        {
+            bool IsFound = false;
+
+            string query = "select top 1 found = 1 from OrderDetails where ItemID = @ItemID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ItemID", ItemID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            IsFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return IsFound;
+            }
+
+            return IsFound;
         }
     }
 }

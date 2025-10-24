@@ -115,5 +115,10 @@ namespace ClsRoleBusinessLayer
         {
             return ClsRoleData.GetAllRoles();
         }
+
+        public static string GetRoleNameByID(int RoleID)
+        {
+            return ClsRoleData.GetRoleNameByID(RoleID);
+        }
     }
 }

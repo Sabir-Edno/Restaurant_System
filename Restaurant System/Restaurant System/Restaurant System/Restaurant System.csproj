@@ -58,11 +58,131 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CtrlItem.cs">
+    <Compile Include="CtrlItemIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CtrlItem.Designer.cs">
-      <DependentUpon>CtrlItem.cs</DependentUpon>
+    <Compile Include="CtrlItemIcon.Designer.cs">
+      <DependentUpon>CtrlItemIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlItemQuantity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlItemQuantity.Designer.cs">
+      <DependentUpon>CtrlItemQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShowCategoryInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlShowCategoryInfo.Designer.cs">
+      <DependentUpon>CtrlShowCategoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShowInventoryInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlShowInventoryInfo.Designer.cs">
+      <DependentUpon>CtrlShowInventoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShowItemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlShowItemInfo.Designer.cs">
+      <DependentUpon>CtrlShowItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShowTableInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlShowTableInfo.Designer.cs">
+      <DependentUpon>CtrlShowTableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShowUserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlShowUserInfo.Designer.cs">
+      <DependentUpon>CtrlShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDeleteCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDeleteCategory.Designer.cs">
+      <DependentUpon>FrrDeleteCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDeleteInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDeleteInventory.Designer.cs">
+      <DependentUpon>FrrDeleteInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDeleteItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDeleteItem.Designer.cs">
+      <DependentUpon>FrrDeleteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDeleteTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDeleteTable.Designer.cs">
+      <DependentUpon>FrrDeleteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDeleteUser.Designer.cs">
+      <DependentUpon>FrrDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrDispalyTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrDispalyTables.Designer.cs">
+      <DependentUpon>FrrDispalyTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrShowCategoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrShowCategoryInfo.Designer.cs">
+      <DependentUpon>FrrShowCategoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrShowInventoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrShowInventoryInfo.Designer.cs">
+      <DependentUpon>FrrShowInventoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrShowItemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrShowItemInfo.Designer.cs">
+      <DependentUpon>FrrShowItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrShowTableInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrShowTableInfo.Designer.cs">
+      <DependentUpon>FrrShowTableInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrAddOrEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrAddOrEditCategory.Designer.cs">
+      <DependentUpon>FrrAddOrEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrAddOrEditInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrAddOrEditInventory.Designer.cs">
+      <DependentUpon>FrrAddOrEditInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrAddOrEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrAddOrEditItem.Designer.cs">
+      <DependentUpon>FrrAddOrEditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrAddOrEditTableScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrAddOrEditTableScreen.Designer.cs">
+      <DependentUpon>FrrAddOrEditTableScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrrAddOrEditUserScreen.cs">
       <SubType>Form</SubType>
@@ -70,17 +190,71 @@
     <Compile Include="FrrAddOrEditUserScreen.Designer.cs">
       <DependentUpon>FrrAddOrEditUserScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrrBillScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrBillScreen.Designer.cs">
+      <DependentUpon>FrrBillScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrCategoryManagementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrCategoryManagementScreen.Designer.cs">
+      <DependentUpon>FrrCategoryManagementScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrChefDispalyOrdersScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrChefDispalyOrdersScreen.Designer.cs">
+      <DependentUpon>FrrChefDispalyOrdersScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrrDashboardScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrrDashboardScreen.Designer.cs">
       <DependentUpon>FrrDashboardScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrrInventoryMangementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrInventoryMangementScreen.Designer.cs">
+      <DependentUpon>FrrInventoryMangementScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrItemManagementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrItemManagementScreen.Designer.cs">
+      <DependentUpon>FrrItemManagementScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrrPOSScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrrPOSScreen.Designer.cs">
       <DependentUpon>FrrPOSScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrReportsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrReportsScreen.Designer.cs">
+      <DependentUpon>FrrReportsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrShowUserInfo.Designer.cs">
+      <DependentUpon>FrrShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlTableIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtrlTableIcon.Designer.cs">
+      <DependentUpon>CtrlTableIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrrTableManagementScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrTableManagementScreen.Designer.cs">
+      <DependentUpon>FrrTableManagementScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrrUserManagmentScreen.cs">
       <SubType>Form</SubType>
@@ -96,17 +270,104 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CtrlItem.resx">
-      <DependentUpon>CtrlItem.cs</DependentUpon>
+    <EmbeddedResource Include="CtrlItemIcon.resx">
+      <DependentUpon>CtrlItemIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlItemQuantity.resx">
+      <DependentUpon>CtrlItemQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlShowCategoryInfo.resx">
+      <DependentUpon>CtrlShowCategoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlShowInventoryInfo.resx">
+      <DependentUpon>CtrlShowInventoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlShowItemInfo.resx">
+      <DependentUpon>CtrlShowItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlShowTableInfo.resx">
+      <DependentUpon>CtrlShowTableInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlShowUserInfo.resx">
+      <DependentUpon>CtrlShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlTableIcon.resx">
+      <DependentUpon>CtrlTableIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrAddOrEditCategory.resx">
+      <DependentUpon>FrrAddOrEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrAddOrEditInventory.resx">
+      <DependentUpon>FrrAddOrEditInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrAddOrEditItem.resx">
+      <DependentUpon>FrrAddOrEditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrAddOrEditTableScreen.resx">
+      <DependentUpon>FrrAddOrEditTableScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrrAddOrEditUserScreen.resx">
       <DependentUpon>FrrAddOrEditUserScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrrBillScreen.resx">
+      <DependentUpon>FrrBillScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrCategoryManagementScreen.resx">
+      <DependentUpon>FrrCategoryManagementScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrChefDispalyOrdersScreen.resx">
+      <DependentUpon>FrrChefDispalyOrdersScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrrDashboardScreen.resx">
       <DependentUpon>FrrDashboardScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrrDeleteCategory.resx">
+      <DependentUpon>FrrDeleteCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDeleteInventory.resx">
+      <DependentUpon>FrrDeleteInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDeleteItem.resx">
+      <DependentUpon>FrrDeleteItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDeleteTable.resx">
+      <DependentUpon>FrrDeleteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDeleteUser.resx">
+      <DependentUpon>FrrDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrDispalyTables.resx">
+      <DependentUpon>FrrDispalyTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrInventoryMangementScreen.resx">
+      <DependentUpon>FrrInventoryMangementScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrItemManagementScreen.resx">
+      <DependentUpon>FrrItemManagementScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrrPOSScreen.resx">
       <DependentUpon>FrrPOSScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrReportsScreen.resx">
+      <DependentUpon>FrrReportsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrShowCategoryInfo.resx">
+      <DependentUpon>FrrShowCategoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrShowInventoryInfo.resx">
+      <DependentUpon>FrrShowInventoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrShowItemInfo.resx">
+      <DependentUpon>FrrShowItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrShowTableInfo.resx">
+      <DependentUpon>FrrShowTableInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrShowUserInfo.resx">
+      <DependentUpon>FrrShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrTableManagementScreen.resx">
+      <DependentUpon>FrrTableManagementScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrrUserManagmentScreen.resx">
       <DependentUpon>FrrUserManagmentScreen.cs</DependentUpon>
@@ -140,6 +401,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\C#_My_Libraries\UtilLib\UtilLib\UtilLibLayer.csproj">
+      <Project>{c02ace50-78d6-41a3-9d76-0a0144086467}</Project>
+      <Name>UtilLibLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\C#_My_Libraries\Validation_Lib\ValidationLib\ValidationLib\ValidationLibLayer.csproj">
       <Project>{de11025c-9a87-4dc3-b16c-44e7943239b7}</Project>
       <Name>ValidationLibLayer</Name>

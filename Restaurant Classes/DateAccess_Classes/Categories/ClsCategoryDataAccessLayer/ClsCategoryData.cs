@@ -647,5 +647,64 @@ namespace ClsCategoryDataAccessLayer
 
             return dt;
         }
+
+        public static string GetCategoryNameByID(int CategoryID)
+        {
+            string CategoryName = "";
+
+            string query = "SELECT CategoryName FROM Categories WHERE CategoryID = @CategoryID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CategoryID", CategoryID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.Read())
+                                CategoryName = (string)reader["CategoryName"];
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+
+            return CategoryName;
+        }
+
+        public static bool IsCategoryReferenceToAnyItemByID(int CategoryID)
+        {
+            bool IsFound = false;
+
+            string query = "select top 1 found = 1 from MenuItems where CategoryID = @CategoryID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CategoryID", CategoryID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            IsFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return IsFound;
+            }
+
+            return IsFound;
+        }
     }
 }

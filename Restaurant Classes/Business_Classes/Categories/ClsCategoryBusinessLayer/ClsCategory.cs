@@ -164,5 +164,15 @@ namespace ClsCategoryBusinessLayer
         {
             return ClsCategoryData.GetAllCategories();
         }
+
+        public static string GetCategoryNameByID(int CategoryID)
+        {
+            return ClsCategoryData.GetCategoryNameByID(CategoryID);
+        }
+        
+        public static bool IsCategoryReferenceToAnyItemByID(int CategoryID)
+        {
+            return ClsCategoryData.IsCategoryReferenceToAnyItemByID(CategoryID);
+        }
     }
 }

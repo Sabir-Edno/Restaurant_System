@@ -427,5 +427,39 @@ namespace ClsRoleDataAccessLayer
 
             return dt;
         }
+
+        public static string GetRoleNameByID(int RoleID)
+        {
+            string RoleName = "";
+
+            string query = "SELECT Name FROM Roles where RoleID = @RoleID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@RoleID", RoleID);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                                RoleName = (string)reader["Name"];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+            finally
+            {
+
+            }
+
+            return RoleName;
+        }
     }
 }

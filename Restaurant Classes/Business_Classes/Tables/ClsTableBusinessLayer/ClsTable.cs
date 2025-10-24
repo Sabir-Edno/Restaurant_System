@@ -190,5 +190,12 @@ namespace ClsTableBusinessLayer
         {
             return ClsTableData.GetAllTables();
         }
+
+        public static bool IsItemReferenceToAnyOrderByID(int TableID)
+        {
+            return ClsTableData.IsItemReferenceToAnyOrderByID(TableID);
+        }
+
+        
     }
 }

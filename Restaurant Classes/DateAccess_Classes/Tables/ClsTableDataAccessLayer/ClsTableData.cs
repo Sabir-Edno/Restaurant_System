@@ -707,5 +707,33 @@ namespace ClsTableDataAccessLayer
 
             return dt;
         }
+
+        public static bool IsItemReferenceToAnyOrderByID(int TableID)
+        {
+            bool IsFound = false;
+
+            string query = "select top 1 found = 1 from Order where TableID = @TableID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TableID", TableID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            IsFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return IsFound;
+            }
+
+            return IsFound;
+        }
     }
 }

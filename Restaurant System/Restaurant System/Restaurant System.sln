@@ -63,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{A94D1C33-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLibLayer", "..\..\..\C#_My_Libraries\Validation_Lib\ValidationLib\ValidationLib\ValidationLibLayer.csproj", "{DE11025C-9A87-4DC3-B16C-44E7943239B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilLibLayer", "..\..\..\C#_My_Libraries\UtilLib\UtilLib\UtilLibLayer.csproj", "{C02ACE50-78D6-41A3-9D76-0A0144086467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,10 @@ Global
 		{DE11025C-9A87-4DC3-B16C-44E7943239B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE11025C-9A87-4DC3-B16C-44E7943239B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE11025C-9A87-4DC3-B16C-44E7943239B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02ACE50-78D6-41A3-9D76-0A0144086467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02ACE50-78D6-41A3-9D76-0A0144086467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02ACE50-78D6-41A3-9D76-0A0144086467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02ACE50-78D6-41A3-9D76-0A0144086467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{80BECFEB-CBBD-4D43-81D8-419B369DF692} = {D489481B-B999-4CC2-A24E-FFBCEB1B1570}
 		{2B3499FE-754D-4866-ACE8-406E1CF63F80} = {A94D1C33-392F-4DCA-A05C-42DD8D62DB04}
 		{DE11025C-9A87-4DC3-B16C-44E7943239B7} = {A94D1C33-392F-4DCA-A05C-42DD8D62DB04}
+		{C02ACE50-78D6-41A3-9D76-0A0144086467} = {A94D1C33-392F-4DCA-A05C-42DD8D62DB04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ED6B1E4-43A5-47DD-8ED7-E3C4EE979FCE}

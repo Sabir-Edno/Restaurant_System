@@ -283,5 +283,10 @@ namespace ClsMenuItemBusinessLayer
         {
             return ClsItemData.GetAllMenuItems();
         }
+
+        public static bool IsItemReferenceToAnyOrderDetailByID(int ItemID)
+        {
+            return ClsItemData.IsItemReferenceToAnyOrderDetailByID(ItemID);
+        }
     }
 }

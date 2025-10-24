@@ -34,7 +34,12 @@ namespace ClsInventoryDataAccessLayer
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
                                 ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -79,7 +84,12 @@ namespace ClsInventoryDataAccessLayer
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
                                 ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -124,7 +134,12 @@ namespace ClsInventoryDataAccessLayer
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
                                 ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -169,7 +184,12 @@ namespace ClsInventoryDataAccessLayer
                                 ItemName = (string)reader["ItemName"];
                                 Unit = (string)reader["Unit"];
                                 ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -214,7 +234,12 @@ namespace ClsInventoryDataAccessLayer
                                 ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 ReorderLevel = Convert.ToDecimal(reader["ReorderLevel"]);
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -259,7 +284,12 @@ namespace ClsInventoryDataAccessLayer
                                 ItemName = (string)reader["ItemName"];
                                 Quantity = Convert.ToDecimal(reader["Quantity"]);
                                 Unit = (string)reader["Unit"];
-                                LastUpdate = (DateTime)reader["LastUpdate"];
+
+                                if (reader["LastUpdate"] != DBNull.Value)
+                                    LastUpdate = (DateTime)reader["LastUpdate"];
+                                else
+                                    LastUpdate = DateTime.MinValue;
+
                             }
                             else
                             {
@@ -343,7 +373,11 @@ namespace ClsInventoryDataAccessLayer
                         command.Parameters.AddWithValue("@Quantity", Quantity);
                         command.Parameters.AddWithValue("@Unit", Unit);
                         command.Parameters.AddWithValue("@ReorderLevel", ReorderLevel);
-                        command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
+
+                        if (LastUpdate != DateTime.MinValue)
+                            command.Parameters.AddWithValue("@LastUpdate", LastUpdate);
+                        else
+                            command.Parameters.AddWithValue("@LastUpdate", DBNull.Value);
                         connection.Open();
                         object result = command.ExecuteScalar();
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))

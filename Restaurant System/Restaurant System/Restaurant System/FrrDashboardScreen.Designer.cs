@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelLeft = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnUserManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnPOS = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.PanelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelCenter = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnUserManagment = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnTableManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PanelLeft.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.SuspendLayout();
@@ -54,13 +55,39 @@
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(18)))));
-            this.PanelLeft.Controls.Add(this.btnUserManagment);
+            this.PanelLeft.Controls.Add(this.btnTableManagement);
+            this.PanelLeft.Controls.Add(this.btnUserManagement);
             this.PanelLeft.Controls.Add(this.btnPOS);
             this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelLeft.Location = new System.Drawing.Point(0, 0);
             this.PanelLeft.Name = "PanelLeft";
             this.PanelLeft.Size = new System.Drawing.Size(239, 1102);
             this.PanelLeft.TabIndex = 1;
+            // 
+            // btnUserManagement
+            // 
+            this.btnUserManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnUserManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnUserManagement.BorderRadius = 15;
+            this.btnUserManagement.BorderThickness = 2;
+            this.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUserManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUserManagement.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUserManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUserManagement.FillColor = System.Drawing.Color.Transparent;
+            this.btnUserManagement.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnUserManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUserManagement.ForeColor = System.Drawing.Color.White;
+            this.btnUserManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnUserManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnUserManagement.Location = new System.Drawing.Point(12, 251);
+            this.btnUserManagement.Name = "btnUserManagement";
+            this.btnUserManagement.Size = new System.Drawing.Size(219, 45);
+            this.btnUserManagement.TabIndex = 1;
+            this.btnUserManagement.Text = "User Management";
+            this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagment_Click);
             // 
             // btnPOS
             // 
@@ -119,30 +146,30 @@
             this.PanelCenter.Size = new System.Drawing.Size(1703, 1002);
             this.PanelCenter.TabIndex = 3;
             // 
-            // btnUserManagment
+            // btnTableManagement
             // 
-            this.btnUserManagment.BackColor = System.Drawing.Color.Transparent;
-            this.btnUserManagment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnUserManagment.BorderRadius = 15;
-            this.btnUserManagment.BorderThickness = 2;
-            this.btnUserManagment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserManagment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserManagment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUserManagment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUserManagment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUserManagment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUserManagment.FillColor = System.Drawing.Color.Transparent;
-            this.btnUserManagment.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnUserManagment.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUserManagment.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnUserManagment.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnUserManagment.Location = new System.Drawing.Point(12, 251);
-            this.btnUserManagment.Name = "btnUserManagment";
-            this.btnUserManagment.Size = new System.Drawing.Size(219, 45);
-            this.btnUserManagment.TabIndex = 1;
-            this.btnUserManagment.Text = "User Managment";
-            this.btnUserManagment.Click += new System.EventHandler(this.btnUserManagment_Click);
+            this.btnTableManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnTableManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnTableManagement.BorderRadius = 15;
+            this.btnTableManagement.BorderThickness = 2;
+            this.btnTableManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTableManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTableManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTableManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTableManagement.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTableManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTableManagement.FillColor = System.Drawing.Color.Transparent;
+            this.btnTableManagement.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnTableManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTableManagement.ForeColor = System.Drawing.Color.White;
+            this.btnTableManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnTableManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnTableManagement.Location = new System.Drawing.Point(12, 328);
+            this.btnTableManagement.Name = "btnTableManagement";
+            this.btnTableManagement.Size = new System.Drawing.Size(219, 45);
+            this.btnTableManagement.TabIndex = 2;
+            this.btnTableManagement.Text = "Table Management";
+            this.btnTableManagement.Click += new System.EventHandler(this.btnTableManagement_Click);
             // 
             // FrrDashboardScreen
             // 
@@ -175,6 +202,7 @@
         private Guna.UI2.WinForms.Guna2Panel PanelTop;
         private Guna.UI2.WinForms.Guna2Panel PanelCenter;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2GradientButton btnUserManagment;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUserManagement;
+        private Guna.UI2.WinForms.Guna2GradientButton btnTableManagement;
     }
 }

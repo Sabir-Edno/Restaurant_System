@@ -35,32 +35,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrrUserManagmentScreen));
             this.lblScreenTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnAdmins = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.btnWaiters = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.btnChefs = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.btnManagers = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DGVUsers = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbFilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalRecords = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pbVisibleIconAdmins = new System.Windows.Forms.PictureBox();
-            this.pbVisibleIconWaiters = new System.Windows.Forms.PictureBox();
-            this.pbVisibleIconChefs = new System.Windows.Forms.PictureBox();
-            this.pbVisibleIconManagers = new System.Windows.Forms.PictureBox();
             this.rbActive = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbInActive = new Guna.UI2.WinForms.Guna2RadioButton();
             this.btnAddNewUser = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.pbVisibleIconManagers = new System.Windows.Forms.PictureBox();
+            this.pbVisibleIconChefs = new System.Windows.Forms.PictureBox();
+            this.pbVisibleIconWaiters = new System.Windows.Forms.PictureBox();
+            this.pbVisibleIconAdmins = new System.Windows.Forms.PictureBox();
+            this.btnManagers = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnChefs = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnWaiters = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnAdmins = new Guna.UI2.WinForms.Guna2GradientTileButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconAdmins)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconWaiters)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconChefs)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconManagers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconChefs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconWaiters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconAdmins)).BeginInit();
             this.SuspendLayout();
             // 
             // lblScreenTitle
@@ -68,7 +74,7 @@
             this.lblScreenTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblScreenTitle.Font = new System.Drawing.Font("Poppins SemiBold", 30F, System.Drawing.FontStyle.Bold);
             this.lblScreenTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.lblScreenTitle.Location = new System.Drawing.Point(646, 12);
+            this.lblScreenTitle.Location = new System.Drawing.Point(621, 12);
             this.lblScreenTitle.Name = "lblScreenTitle";
             this.lblScreenTitle.Size = new System.Drawing.Size(443, 90);
             this.lblScreenTitle.TabIndex = 0;
@@ -78,106 +84,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 50;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // btnAdmins
-            // 
-            this.btnAdmins.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnAdmins.BorderRadius = 15;
-            this.btnAdmins.BorderThickness = 2;
-            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmins.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdmins.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdmins.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdmins.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdmins.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdmins.FillColor = System.Drawing.Color.Black;
-            this.btnAdmins.FillColor2 = System.Drawing.Color.Black;
-            this.btnAdmins.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdmins.ForeColor = System.Drawing.Color.White;
-            this.btnAdmins.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnAdmins.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnAdmins.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmins.Image")));
-            this.btnAdmins.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnAdmins.Location = new System.Drawing.Point(87, 160);
-            this.btnAdmins.Name = "btnAdmins";
-            this.btnAdmins.Size = new System.Drawing.Size(243, 204);
-            this.btnAdmins.TabIndex = 5;
-            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
-            // 
-            // btnWaiters
-            // 
-            this.btnWaiters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnWaiters.BorderRadius = 15;
-            this.btnWaiters.BorderThickness = 2;
-            this.btnWaiters.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWaiters.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnWaiters.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnWaiters.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnWaiters.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnWaiters.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnWaiters.FillColor = System.Drawing.Color.Black;
-            this.btnWaiters.FillColor2 = System.Drawing.Color.Black;
-            this.btnWaiters.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnWaiters.ForeColor = System.Drawing.Color.White;
-            this.btnWaiters.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnWaiters.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnWaiters.Image = ((System.Drawing.Image)(resources.GetObject("btnWaiters.Image")));
-            this.btnWaiters.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnWaiters.Location = new System.Drawing.Point(495, 160);
-            this.btnWaiters.Name = "btnWaiters";
-            this.btnWaiters.Size = new System.Drawing.Size(243, 204);
-            this.btnWaiters.TabIndex = 6;
-            this.btnWaiters.Click += new System.EventHandler(this.btnWaiters_Click);
-            // 
-            // btnChefs
-            // 
-            this.btnChefs.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnChefs.BorderRadius = 15;
-            this.btnChefs.BorderThickness = 2;
-            this.btnChefs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChefs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChefs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChefs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChefs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChefs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChefs.FillColor = System.Drawing.Color.Black;
-            this.btnChefs.FillColor2 = System.Drawing.Color.Black;
-            this.btnChefs.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChefs.ForeColor = System.Drawing.Color.White;
-            this.btnChefs.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnChefs.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnChefs.Image = ((System.Drawing.Image)(resources.GetObject("btnChefs.Image")));
-            this.btnChefs.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnChefs.Location = new System.Drawing.Point(903, 160);
-            this.btnChefs.Name = "btnChefs";
-            this.btnChefs.Size = new System.Drawing.Size(243, 204);
-            this.btnChefs.TabIndex = 7;
-            this.btnChefs.Click += new System.EventHandler(this.btnChefs_Click);
-            // 
-            // btnManagers
-            // 
-            this.btnManagers.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnManagers.BorderRadius = 15;
-            this.btnManagers.BorderThickness = 2;
-            this.btnManagers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManagers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManagers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManagers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManagers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManagers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManagers.FillColor = System.Drawing.Color.Black;
-            this.btnManagers.FillColor2 = System.Drawing.Color.Black;
-            this.btnManagers.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnManagers.ForeColor = System.Drawing.Color.White;
-            this.btnManagers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnManagers.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnManagers.Image = ((System.Drawing.Image)(resources.GetObject("btnManagers.Image")));
-            this.btnManagers.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnManagers.Location = new System.Drawing.Point(1309, 160);
-            this.btnManagers.Name = "btnManagers";
-            this.btnManagers.Size = new System.Drawing.Size(243, 204);
-            this.btnManagers.TabIndex = 8;
-            this.btnManagers.Click += new System.EventHandler(this.btnManagers_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -239,6 +145,7 @@
             this.DGVUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVUsers.ColumnHeadersHeight = 30;
             this.DGVUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DGVUsers.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +184,41 @@
             this.DGVUsers.ThemeStyle.RowsStyle.Height = 24;
             this.DGVUsers.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVUsers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewUserToolStripMenuItem,
+            this.updateUserToolStripMenuItem,
+            this.updateUserToolStripMenuItem1,
+            this.deleteUserToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 100);
+            // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.addNewUserToolStripMenuItem.Text = "Show User Info";
+            // 
+            // updateUserToolStripMenuItem
+            // 
+            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
+            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.updateUserToolStripMenuItem.Text = "Add New User";
+            // 
+            // updateUserToolStripMenuItem1
+            // 
+            this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
+            this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
+            this.updateUserToolStripMenuItem1.Text = "Update User Info";
+            // 
+            // deleteUserToolStripMenuItem
+            // 
+            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.deleteUserToolStripMenuItem.Text = "Delete User";
             // 
             // cbFilter
             // 
@@ -357,50 +299,6 @@
             this.lblTotalRecords.TabIndex = 18;
             this.lblTotalRecords.Text = "???";
             // 
-            // pbVisibleIconAdmins
-            // 
-            this.pbVisibleIconAdmins.Image = global::Restaurant_System.Properties.Resources.focus__1_;
-            this.pbVisibleIconAdmins.Location = new System.Drawing.Point(190, 126);
-            this.pbVisibleIconAdmins.Name = "pbVisibleIconAdmins";
-            this.pbVisibleIconAdmins.Size = new System.Drawing.Size(27, 28);
-            this.pbVisibleIconAdmins.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVisibleIconAdmins.TabIndex = 19;
-            this.pbVisibleIconAdmins.TabStop = false;
-            this.pbVisibleIconAdmins.Visible = false;
-            // 
-            // pbVisibleIconWaiters
-            // 
-            this.pbVisibleIconWaiters.Image = global::Restaurant_System.Properties.Resources.focus__1_;
-            this.pbVisibleIconWaiters.Location = new System.Drawing.Point(604, 126);
-            this.pbVisibleIconWaiters.Name = "pbVisibleIconWaiters";
-            this.pbVisibleIconWaiters.Size = new System.Drawing.Size(27, 28);
-            this.pbVisibleIconWaiters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVisibleIconWaiters.TabIndex = 20;
-            this.pbVisibleIconWaiters.TabStop = false;
-            this.pbVisibleIconWaiters.Visible = false;
-            // 
-            // pbVisibleIconChefs
-            // 
-            this.pbVisibleIconChefs.Image = global::Restaurant_System.Properties.Resources.focus__1_;
-            this.pbVisibleIconChefs.Location = new System.Drawing.Point(1008, 126);
-            this.pbVisibleIconChefs.Name = "pbVisibleIconChefs";
-            this.pbVisibleIconChefs.Size = new System.Drawing.Size(27, 28);
-            this.pbVisibleIconChefs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVisibleIconChefs.TabIndex = 21;
-            this.pbVisibleIconChefs.TabStop = false;
-            this.pbVisibleIconChefs.Visible = false;
-            // 
-            // pbVisibleIconManagers
-            // 
-            this.pbVisibleIconManagers.Image = global::Restaurant_System.Properties.Resources.focus__1_;
-            this.pbVisibleIconManagers.Location = new System.Drawing.Point(1415, 126);
-            this.pbVisibleIconManagers.Name = "pbVisibleIconManagers";
-            this.pbVisibleIconManagers.Size = new System.Drawing.Size(27, 28);
-            this.pbVisibleIconManagers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVisibleIconManagers.TabIndex = 22;
-            this.pbVisibleIconManagers.TabStop = false;
-            this.pbVisibleIconManagers.Visible = false;
-            // 
             // rbActive
             // 
             this.rbActive.AutoSize = true;
@@ -472,6 +370,150 @@
             this.btnAddNewUser.TabIndex = 25;
             this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
+            // pbVisibleIconManagers
+            // 
+            this.pbVisibleIconManagers.Image = global::Restaurant_System.Properties.Resources.focus__1_;
+            this.pbVisibleIconManagers.Location = new System.Drawing.Point(1415, 126);
+            this.pbVisibleIconManagers.Name = "pbVisibleIconManagers";
+            this.pbVisibleIconManagers.Size = new System.Drawing.Size(27, 28);
+            this.pbVisibleIconManagers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVisibleIconManagers.TabIndex = 22;
+            this.pbVisibleIconManagers.TabStop = false;
+            this.pbVisibleIconManagers.Visible = false;
+            // 
+            // pbVisibleIconChefs
+            // 
+            this.pbVisibleIconChefs.Image = global::Restaurant_System.Properties.Resources.focus__1_;
+            this.pbVisibleIconChefs.Location = new System.Drawing.Point(1008, 126);
+            this.pbVisibleIconChefs.Name = "pbVisibleIconChefs";
+            this.pbVisibleIconChefs.Size = new System.Drawing.Size(27, 28);
+            this.pbVisibleIconChefs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVisibleIconChefs.TabIndex = 21;
+            this.pbVisibleIconChefs.TabStop = false;
+            this.pbVisibleIconChefs.Visible = false;
+            // 
+            // pbVisibleIconWaiters
+            // 
+            this.pbVisibleIconWaiters.Image = global::Restaurant_System.Properties.Resources.focus__1_;
+            this.pbVisibleIconWaiters.Location = new System.Drawing.Point(604, 126);
+            this.pbVisibleIconWaiters.Name = "pbVisibleIconWaiters";
+            this.pbVisibleIconWaiters.Size = new System.Drawing.Size(27, 28);
+            this.pbVisibleIconWaiters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVisibleIconWaiters.TabIndex = 20;
+            this.pbVisibleIconWaiters.TabStop = false;
+            this.pbVisibleIconWaiters.Visible = false;
+            // 
+            // pbVisibleIconAdmins
+            // 
+            this.pbVisibleIconAdmins.Image = global::Restaurant_System.Properties.Resources.focus__1_;
+            this.pbVisibleIconAdmins.Location = new System.Drawing.Point(190, 126);
+            this.pbVisibleIconAdmins.Name = "pbVisibleIconAdmins";
+            this.pbVisibleIconAdmins.Size = new System.Drawing.Size(27, 28);
+            this.pbVisibleIconAdmins.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVisibleIconAdmins.TabIndex = 19;
+            this.pbVisibleIconAdmins.TabStop = false;
+            this.pbVisibleIconAdmins.Visible = false;
+            // 
+            // btnManagers
+            // 
+            this.btnManagers.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnManagers.BorderRadius = 15;
+            this.btnManagers.BorderThickness = 2;
+            this.btnManagers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManagers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManagers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManagers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManagers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManagers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManagers.FillColor = System.Drawing.Color.Black;
+            this.btnManagers.FillColor2 = System.Drawing.Color.Black;
+            this.btnManagers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnManagers.ForeColor = System.Drawing.Color.White;
+            this.btnManagers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnManagers.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnManagers.Image = ((System.Drawing.Image)(resources.GetObject("btnManagers.Image")));
+            this.btnManagers.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnManagers.Location = new System.Drawing.Point(1309, 160);
+            this.btnManagers.Name = "btnManagers";
+            this.btnManagers.Size = new System.Drawing.Size(243, 204);
+            this.btnManagers.TabIndex = 8;
+            this.btnManagers.Click += new System.EventHandler(this.btnManagers_Click);
+            // 
+            // btnChefs
+            // 
+            this.btnChefs.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnChefs.BorderRadius = 15;
+            this.btnChefs.BorderThickness = 2;
+            this.btnChefs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChefs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChefs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChefs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChefs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChefs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChefs.FillColor = System.Drawing.Color.Black;
+            this.btnChefs.FillColor2 = System.Drawing.Color.Black;
+            this.btnChefs.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChefs.ForeColor = System.Drawing.Color.White;
+            this.btnChefs.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnChefs.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnChefs.Image = ((System.Drawing.Image)(resources.GetObject("btnChefs.Image")));
+            this.btnChefs.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnChefs.Location = new System.Drawing.Point(903, 160);
+            this.btnChefs.Name = "btnChefs";
+            this.btnChefs.Size = new System.Drawing.Size(243, 204);
+            this.btnChefs.TabIndex = 7;
+            this.btnChefs.Click += new System.EventHandler(this.btnChefs_Click);
+            // 
+            // btnWaiters
+            // 
+            this.btnWaiters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnWaiters.BorderRadius = 15;
+            this.btnWaiters.BorderThickness = 2;
+            this.btnWaiters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWaiters.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnWaiters.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnWaiters.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnWaiters.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnWaiters.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnWaiters.FillColor = System.Drawing.Color.Black;
+            this.btnWaiters.FillColor2 = System.Drawing.Color.Black;
+            this.btnWaiters.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnWaiters.ForeColor = System.Drawing.Color.White;
+            this.btnWaiters.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnWaiters.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnWaiters.Image = ((System.Drawing.Image)(resources.GetObject("btnWaiters.Image")));
+            this.btnWaiters.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnWaiters.Location = new System.Drawing.Point(495, 160);
+            this.btnWaiters.Name = "btnWaiters";
+            this.btnWaiters.Size = new System.Drawing.Size(243, 204);
+            this.btnWaiters.TabIndex = 6;
+            this.btnWaiters.Click += new System.EventHandler(this.btnWaiters_Click);
+            // 
+            // btnAdmins
+            // 
+            this.btnAdmins.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnAdmins.BorderRadius = 15;
+            this.btnAdmins.BorderThickness = 2;
+            this.btnAdmins.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmins.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdmins.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdmins.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdmins.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdmins.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdmins.FillColor = System.Drawing.Color.Black;
+            this.btnAdmins.FillColor2 = System.Drawing.Color.Black;
+            this.btnAdmins.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdmins.ForeColor = System.Drawing.Color.White;
+            this.btnAdmins.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnAdmins.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnAdmins.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmins.Image")));
+            this.btnAdmins.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnAdmins.Location = new System.Drawing.Point(87, 160);
+            this.btnAdmins.Name = "btnAdmins";
+            this.btnAdmins.Size = new System.Drawing.Size(243, 204);
+            this.btnAdmins.TabIndex = 5;
+            this.btnAdmins.Click += new System.EventHandler(this.btnAdmins_Click);
+            // 
             // FrrUserManagmentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -506,10 +548,11 @@
             this.Text = "FrrUserManagmentScreen";
             this.Load += new System.EventHandler(this.FrrUserManagmentScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconAdmins)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconWaiters)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconChefs)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconManagers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconChefs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconWaiters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisibleIconAdmins)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,5 +583,10 @@
         private Guna.UI2.WinForms.Guna2RadioButton rbInActive;
         private Guna.UI2.WinForms.Guna2RadioButton rbActive;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAddNewUser;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
     }
 }
