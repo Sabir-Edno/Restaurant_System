@@ -19,7 +19,6 @@ namespace Restaurant_System
         enum enMode { AddNew = 1, Update = 2 }
         enMode _Mode = enMode.Update;
 
-
         public FrrAddOrEditInventory()
         {
             InitializeComponent();
@@ -34,6 +33,23 @@ namespace Restaurant_System
             _InventoryID = InventoryID;
 
             _Mode = enMode.Update;
+        }
+
+        private void _FillCbUnits()
+        {
+            DataTable _dtUnits = ClsInventory.GetAllUnits();
+
+            if (_dtUnits.Rows.Count > 0)
+            {
+                foreach (DataRow item in _dtUnits.Rows)
+                {
+                    cbUnits.Items.Add(item["UnitSymbol"]);
+                }
+
+                cbUnits.SelectedIndex = 0;  
+            }
+            else
+                cbUnits.Enabled = false;
         }
 
         private void _LoadInventoryInfo()
@@ -54,7 +70,11 @@ namespace Restaurant_System
 
                 lblInventoryID.Text = _Inventory.InventoryID.ToString();
                 tbItemName.Text = _Inventory.ItemName;
-                tbUnit.Text = _Inventory.Unit;
+                tbQuantity.Text = _Inventory.Quantity.ToString();
+
+                if (cbUnits.Enabled)
+                    cbUnits.SelectedItem = _Inventory.Unit;
+
                 tbReorderLevel.Text = _Inventory.ReorderLevel.ToString();
                 if (_Inventory.LastUpdate != DateTime.MinValue)
                     lblLastUpdate.Text = _Inventory.LastUpdate.ToShortDateString();
@@ -68,6 +88,8 @@ namespace Restaurant_System
 
         private void FrrAddOrEditInventory_Load(object sender, EventArgs e)
         {
+            tbItemName.MaxLength = 100;
+            _FillCbUnits();
             _LoadInventoryInfo();
         }
 
@@ -112,20 +134,6 @@ namespace Restaurant_System
             }
         }
 
-        private void tbUnit_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbUnit.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(tbUnit, "Unit Not Be Empty");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(tbUnit, null);
-            }
-        }
-
         private void tbReorderLevel_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(tbReorderLevel.Text.Trim()))
@@ -158,10 +166,16 @@ namespace Restaurant_System
                 return;
             }
 
+            if(!cbUnits.Enabled)
+            {
+                MessageBox.Show("Data Units Don't Found. You Can Add This Data Without it", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             _Inventory.ItemName = tbItemName.Text;
-            _Inventory.Quantity = Convert.ToInt32(tbQuantity.Text);
-            _Inventory.Unit = tbUnit.Text;
-            _Inventory.ReorderLevel = Convert.ToInt32(tbReorderLevel.Text);
+            _Inventory.Quantity = Convert.ToDecimal(tbQuantity.Text);
+            _Inventory.Unit = cbUnits.SelectedItem.ToString();
+            _Inventory.ReorderLevel = Convert.ToDecimal(tbReorderLevel.Text);
 
 
             if (_Mode == enMode.AddNew)
@@ -170,6 +184,7 @@ namespace Restaurant_System
                 {
                     lblInventoryID.Text = _Inventory.InventoryID.ToString();
                     MessageBox.Show("Inventory Added Successfully", "Inventory Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblTitleMode.Text = "Update Inventory Info";
                 }
                 else
                 {

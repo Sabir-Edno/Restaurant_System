@@ -108,6 +108,9 @@ namespace Restaurant_System
 
         private void FrrAddOrEditItem_Load(object sender, EventArgs e)
         {
+            tbItemName.MaxLength = 50;
+            tbDescription.MaxLength = 255;
+
             _FillCbCategories();
             _LoadItemInfo();
         }
@@ -264,6 +267,7 @@ namespace Restaurant_System
                 {
                     lblItemID.Text = _Item.ItemID.ToString();
                     MessageBox.Show("Item Added Successfully", "Item Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblTitleMode.Text = "Update Item Info";
                 }
                 else
                 {

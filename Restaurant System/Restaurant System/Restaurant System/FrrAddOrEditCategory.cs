@@ -72,6 +72,8 @@ namespace Restaurant_System
 
         private void FrrAddOrEditCategory_Load(object sender, EventArgs e)
         {
+            tbCategoryName.MaxLength = 100;
+            tbDescription.MaxLength = 255;
             _LoadCategoryInfo();
         }
 
@@ -94,8 +96,16 @@ namespace Restaurant_System
             }
             else
             {
-                e.Cancel = false;
-                errorProvider1.SetError(tbCategoryName, null);
+                if (ClsCategory.IsCategoryExistByCategoryName(tbCategoryName.Text) && tbCategoryName.Text != _Category.CategoryName)
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(tbCategoryName, "CategroyName Aleardy Exists");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(tbCategoryName, null);
+                }
             }
         }
 
@@ -122,6 +132,7 @@ namespace Restaurant_System
                     lblCategoryID.Text = _Category.CategoryID.ToString();
                     lblCreatedAt.Text = _Category.CreatedAt.ToString();
                     MessageBox.Show("Category Added Successfully", "Category Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblTitleMode.Text = "Update Category Info";
                 }
                 else
                 {
@@ -133,7 +144,6 @@ namespace Restaurant_System
                 _Category.Updated = DateTime.Now;
                 if (_Category.Save())
                 {
-
                     MessageBox.Show("Category Updated Successfully", "Category Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

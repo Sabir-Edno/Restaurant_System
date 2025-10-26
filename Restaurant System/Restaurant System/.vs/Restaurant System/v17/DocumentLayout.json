@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frrdeletetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frrdeletetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frrcategorymanagementscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frrcategorymanagementscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frrdeletetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frrdeletetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frraddoreditcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frraddoreditcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frrdeleteinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frrdeleteinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frraddoreditcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frraddoreditcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|c:\\restaurant-system\\restaurant system\\restaurant system\\restaurant system\\frrcategorymanagementscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A23FFBFA-E4B3-486C-B7A0-EAEE8C5D6BBB}|Restaurant System\\Restaurant System.csproj|solutionrelative:restaurant system\\frrcategorymanagementscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 134,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,40 +58,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrrDeleteTable.cs",
-              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteTable.cs",
-              "RelativeDocumentMoniker": "Restaurant System\\FrrDeleteTable.cs",
-              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteTable.cs",
-              "RelativeToolTip": "Restaurant System\\FrrDeleteTable.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAjwCUAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FrrAddOrEditCategory.cs",
+              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrAddOrEditCategory.cs",
+              "RelativeDocumentMoniker": "Restaurant System\\FrrAddOrEditCategory.cs",
+              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrAddOrEditCategory.cs",
+              "RelativeToolTip": "Restaurant System\\FrrAddOrEditCategory.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAEwFkAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T12:22:08.042Z",
+              "WhenOpened": "2025-10-26T10:23:08.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrrDeleteTable.cs [Design]",
-              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteTable.cs",
-              "RelativeDocumentMoniker": "Restaurant System\\FrrDeleteTable.cs",
-              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteTable.cs [Design]",
-              "RelativeToolTip": "Restaurant System\\FrrDeleteTable.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "FrrAddOrEditCategory.cs [Design]",
+              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrAddOrEditCategory.cs",
+              "RelativeDocumentMoniker": "Restaurant System\\FrrAddOrEditCategory.cs",
+              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrAddOrEditCategory.cs [Design]",
+              "RelativeToolTip": "Restaurant System\\FrrAddOrEditCategory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T12:32:56.776Z",
+              "WhenOpened": "2025-10-26T10:23:06.345Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrrDeleteInventory.cs",
-              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteInventory.cs",
-              "RelativeDocumentMoniker": "Restaurant System\\FrrDeleteInventory.cs",
-              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrDeleteInventory.cs",
-              "RelativeToolTip": "Restaurant System\\FrrDeleteInventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FrrCategoryManagementScreen.cs [Design]",
+              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrCategoryManagementScreen.cs",
+              "RelativeDocumentMoniker": "Restaurant System\\FrrCategoryManagementScreen.cs",
+              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrCategoryManagementScreen.cs [Design]",
+              "RelativeToolTip": "Restaurant System\\FrrCategoryManagementScreen.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:54:20.85Z",
+              "WhenOpened": "2025-10-26T10:00:17.488Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrrCategoryManagementScreen.cs",
+              "DocumentMoniker": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrCategoryManagementScreen.cs",
+              "RelativeDocumentMoniker": "Restaurant System\\FrrCategoryManagementScreen.cs",
+              "ToolTip": "C:\\Restaurant-System\\Restaurant System\\Restaurant System\\Restaurant System\\FrrCategoryManagementScreen.cs",
+              "RelativeToolTip": "Restaurant System\\FrrCategoryManagementScreen.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAMwHwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T10:01:19.886Z",
               "EditorCaption": ""
             }
           ]

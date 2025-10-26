@@ -1359,5 +1359,32 @@ namespace ClsUserDataAccessLayer
 
             return dt;
         }
+        public static bool IsUserReferenceToAnyOrderByID(int UserID)
+        {
+            bool IsFound = false;
+
+            string query = "select top 1 found = 1 from Order where UserID = @UserID";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            IsFound = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return IsFound;
+            }
+
+            return IsFound;
+        }
     }
 }

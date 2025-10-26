@@ -121,13 +121,13 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>62</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAddNewUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADqxSURBVHhe7d0J
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADqxSURBVHhe7d0J
         lFxlmfBxVnVcRtzXUWdcPh03lG9ccEYidFXdSkjSW3XCEhJIugERBRURQWnEBVRQUAldt8ImKFR1CEu2
         7k53p7tuBfCLgxsiizsqAqIMkK57K8nznVvdccLz3iS9VHffe+v/O+d/znf8HKSq633eWu6y334AIkcG
         v/t8KeXeIcXs0eJkT5Fi9jxx7G9KKXudOPY6cXJ3imM/KI79K3HsP4tjPz7WDnFsEcfevtt/5v//+/+9

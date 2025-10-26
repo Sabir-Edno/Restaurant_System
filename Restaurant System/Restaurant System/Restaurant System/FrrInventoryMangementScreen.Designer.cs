@@ -40,15 +40,14 @@
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DGVInventory = new Guna.UI2.WinForms.Guna2DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowInventoryInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblScreenTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnAddNewInventory = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.rbActive = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbInActive = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.CbUnits = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVInventory)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +97,8 @@
             this.tbFilter.SelectedText = "";
             this.tbFilter.Size = new System.Drawing.Size(225, 34);
             this.tbFilter.TabIndex = 52;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilter_KeyPress);
             // 
             // guna2HtmlLabel5
             // 
@@ -128,6 +129,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(209, 36);
             this.cbFilter.TabIndex = 50;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // DGVInventory
             // 
@@ -189,36 +191,40 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
+            this.ShowInventoryInfoToolStripMenuItem,
+            this.AddNewInventoryToolStripMenuItem,
             this.updateUserToolStripMenuItem1,
             this.deleteUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(223, 100);
             // 
-            // addNewUserToolStripMenuItem
+            // ShowInventoryInfoToolStripMenuItem
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.addNewUserToolStripMenuItem.Text = "Show Inventory Info";
+            this.ShowInventoryInfoToolStripMenuItem.Name = "ShowInventoryInfoToolStripMenuItem";
+            this.ShowInventoryInfoToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.ShowInventoryInfoToolStripMenuItem.Text = "Show Inventory Info";
+            this.ShowInventoryInfoToolStripMenuItem.Click += new System.EventHandler(this.ShowInventoryInfoToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem
+            // AddNewInventoryToolStripMenuItem
             // 
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.updateUserToolStripMenuItem.Text = "Add New Inventory";
+            this.AddNewInventoryToolStripMenuItem.Name = "AddNewInventoryToolStripMenuItem";
+            this.AddNewInventoryToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.AddNewInventoryToolStripMenuItem.Text = "Add New Inventory";
+            this.AddNewInventoryToolStripMenuItem.Click += new System.EventHandler(this.AddNewInventoryToolStripMenuItem_Click);
             // 
             // updateUserToolStripMenuItem1
             // 
             this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
             this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
             this.updateUserToolStripMenuItem1.Text = "Update Inventory Info";
+            this.updateUserToolStripMenuItem1.Click += new System.EventHandler(this.updateUserToolStripMenuItem1_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.deleteUserToolStripMenuItem.Text = "Delete Inventory";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // lblScreenTitle
             // 
@@ -258,50 +264,27 @@
             this.btnAddNewInventory.Name = "btnAddNewInventory";
             this.btnAddNewInventory.Size = new System.Drawing.Size(64, 58);
             this.btnAddNewInventory.TabIndex = 57;
+            this.btnAddNewInventory.Click += new System.EventHandler(this.btnAddNewInventory_Click);
             // 
-            // rbActive
+            // CbUnits
             // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Checked = true;
-            this.rbActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.BorderThickness = 0;
-            this.rbActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbActive.CheckedState.InnerOffset = -4;
-            this.rbActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.rbActive.Location = new System.Drawing.Point(480, 281);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(81, 30);
-            this.rbActive.TabIndex = 55;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbActive.UncheckedState.BorderThickness = 2;
-            this.rbActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbActive.Visible = false;
-            // 
-            // rbInActive
-            // 
-            this.rbInActive.AutoSize = true;
-            this.rbInActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.BorderThickness = 0;
-            this.rbInActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbInActive.CheckedState.InnerOffset = -4;
-            this.rbInActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbInActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.rbInActive.Location = new System.Drawing.Point(577, 281);
-            this.rbInActive.Name = "rbInActive";
-            this.rbInActive.Size = new System.Drawing.Size(95, 30);
-            this.rbInActive.TabIndex = 56;
-            this.rbInActive.Text = "InActive";
-            this.rbInActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbInActive.UncheckedState.BorderThickness = 2;
-            this.rbInActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbInActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbInActive.Visible = false;
+            this.CbUnits.BackColor = System.Drawing.Color.Transparent;
+            this.CbUnits.BorderColor = System.Drawing.Color.White;
+            this.CbUnits.BorderRadius = 10;
+            this.CbUnits.BorderThickness = 2;
+            this.CbUnits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbUnits.FillColor = System.Drawing.Color.Black;
+            this.CbUnits.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbUnits.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbUnits.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CbUnits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.CbUnits.ItemHeight = 30;
+            this.CbUnits.Location = new System.Drawing.Point(462, 281);
+            this.CbUnits.Name = "CbUnits";
+            this.CbUnits.Size = new System.Drawing.Size(209, 36);
+            this.CbUnits.TabIndex = 66;
+            this.CbUnits.SelectedIndexChanged += new System.EventHandler(this.CbUnits_SelectedIndexChanged);
             // 
             // FrrInventoryMangementScreen
             // 
@@ -309,8 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1703, 982);
-            this.Controls.Add(this.rbInActive);
-            this.Controls.Add(this.rbActive);
+            this.Controls.Add(this.CbUnits);
             this.Controls.Add(this.lblTotalRecords);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.tbFilter);
@@ -341,12 +323,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblScreenTitle;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowInventoryInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAddNewInventory;
-        private Guna.UI2.WinForms.Guna2RadioButton rbActive;
-        private Guna.UI2.WinForms.Guna2RadioButton rbInActive;
+        private Guna.UI2.WinForms.Guna2ComboBox CbUnits;
     }
 }

@@ -41,8 +41,8 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DGVUsers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -189,36 +189,40 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
+            this.ShowUserInfoToolStripMenuItem,
+            this.AddNewUserToolStripMenuItem,
             this.updateUserToolStripMenuItem1,
             this.deleteUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
             // 
-            // addNewUserToolStripMenuItem
+            // ShowUserInfoToolStripMenuItem
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.addNewUserToolStripMenuItem.Text = "Show User Info";
+            this.ShowUserInfoToolStripMenuItem.Name = "ShowUserInfoToolStripMenuItem";
+            this.ShowUserInfoToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.ShowUserInfoToolStripMenuItem.Text = "Show User Info";
+            this.ShowUserInfoToolStripMenuItem.Click += new System.EventHandler(this.ShowUserInfoToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem
+            // AddNewUserToolStripMenuItem
             // 
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.updateUserToolStripMenuItem.Text = "Add New User";
+            this.AddNewUserToolStripMenuItem.Name = "AddNewUserToolStripMenuItem";
+            this.AddNewUserToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.AddNewUserToolStripMenuItem.Text = "Add New User";
+            this.AddNewUserToolStripMenuItem.Click += new System.EventHandler(this.AddNewUserToolStripMenuItem_Click);
             // 
             // updateUserToolStripMenuItem1
             // 
             this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
-            this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
+            this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.updateUserToolStripMenuItem1.Text = "Update User Info";
+            this.updateUserToolStripMenuItem1.Click += new System.EventHandler(this.updateUserToolStripMenuItem1_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.deleteUserToolStripMenuItem.Text = "Delete User";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // cbFilter
             // 
@@ -584,8 +588,8 @@
         private Guna.UI2.WinForms.Guna2RadioButton rbActive;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAddNewUser;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowUserInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
     }

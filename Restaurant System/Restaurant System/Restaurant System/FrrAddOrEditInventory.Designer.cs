@@ -34,7 +34,6 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.tbReorderLevel = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -48,6 +47,7 @@
             this.lblTitleMode = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblLastUpdate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUpdateAtTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cbUnits = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,32 +140,6 @@
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(129, 33);
             this.guna2HtmlLabel5.TabIndex = 52;
             this.guna2HtmlLabel5.Text = "ReorderLevel : ";
-            // 
-            // tbUnit
-            // 
-            this.tbUnit.BackColor = System.Drawing.Color.Transparent;
-            this.tbUnit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.tbUnit.BorderRadius = 10;
-            this.tbUnit.BorderThickness = 2;
-            this.tbUnit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUnit.DefaultText = "";
-            this.tbUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUnit.FillColor = System.Drawing.Color.Black;
-            this.tbUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbUnit.ForeColor = System.Drawing.Color.White;
-            this.tbUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUnit.Location = new System.Drawing.Point(158, 284);
-            this.tbUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbUnit.Name = "tbUnit";
-            this.tbUnit.PlaceholderText = "Enter Unit";
-            this.tbUnit.SelectedText = "";
-            this.tbUnit.Size = new System.Drawing.Size(225, 34);
-            this.tbUnit.TabIndex = 51;
-            this.tbUnit.Validating += new System.ComponentModel.CancelEventHandler(this.tbUnit_Validating);
             // 
             // tbQuantity
             // 
@@ -333,19 +307,38 @@
             this.lblUpdateAtTitle.TabIndex = 63;
             this.lblUpdateAtTitle.Text = "Last Update : ";
             // 
+            // cbUnits
+            // 
+            this.cbUnits.BackColor = System.Drawing.Color.Transparent;
+            this.cbUnits.BorderColor = System.Drawing.Color.White;
+            this.cbUnits.BorderRadius = 10;
+            this.cbUnits.BorderThickness = 2;
+            this.cbUnits.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnits.FillColor = System.Drawing.Color.Black;
+            this.cbUnits.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbUnits.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbUnits.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbUnits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.cbUnits.ItemHeight = 30;
+            this.cbUnits.Location = new System.Drawing.Point(158, 283);
+            this.cbUnits.Name = "cbUnits";
+            this.cbUnits.Size = new System.Drawing.Size(209, 36);
+            this.cbUnits.TabIndex = 65;
+            // 
             // FrrAddOrEditInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(776, 541);
+            this.Controls.Add(this.cbUnits);
             this.Controls.Add(this.lblLastUpdate);
             this.Controls.Add(this.lblUpdateAtTitle);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbReorderLevel);
             this.Controls.Add(this.guna2HtmlLabel5);
-            this.Controls.Add(this.tbUnit);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel4);
@@ -373,7 +366,6 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton btnSave;
         private Guna.UI2.WinForms.Guna2TextBox tbReorderLevel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2TextBox tbUnit;
         private Guna.UI2.WinForms.Guna2TextBox tbQuantity;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
@@ -387,5 +379,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLastUpdate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUpdateAtTitle;
+        private Guna.UI2.WinForms.Guna2ComboBox cbUnits;
     }
 }

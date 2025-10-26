@@ -100,6 +100,11 @@ namespace Restaurant_System
 
         private void FrrAddOrEditUserScreen_Load(object sender, EventArgs e)
         {
+            tbFullName.MaxLength = 100;
+            tbUsername.MaxLength = 50;
+            tbPassword.MaxLength = 255;
+            tbPhone.MaxLength = 50;
+            tbEmail.MaxLength = 100;
             cbRoles.Items.Add("None");
             cbRoles.SelectedIndex = 0;
 
@@ -202,15 +207,18 @@ namespace Restaurant_System
 
         private void tbPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(tbPassword.Text.Trim()))
+            if (tbPassword.Visible)
             {
-                e.Cancel = true;
-                errorProvider1.SetError(tbPassword, "Password Should Not Be Empty");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(tbPassword, null);
+                if (string.IsNullOrEmpty(tbPassword.Text.Trim()))
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(tbPassword, "Password Should Not Be Empty");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(tbPassword, null);
+                }
             }
         }
 
@@ -270,10 +278,10 @@ namespace Restaurant_System
                 {
                     lblUserID.Text = _User.UserID.ToString();
                     lblCreatedAt.Text = _User.CreatedAt.ToString();
-                    lblTitleMode.Text = "Edit User Info";
                     _Mode = enMode.Update;
                     DataBack?.Invoke(this, _User.RoleID);
                     MessageBox.Show("User Added Successfully", "User Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblTitleMode.Text = "Edit User Info";
                 }
                 else
                 {

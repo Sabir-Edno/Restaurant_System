@@ -707,5 +707,38 @@ namespace ClsInventoryDataAccessLayer
 
             return dt;
         }
+
+        public static DataTable GetAllUnits()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Units";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
+
+            return dt;
+        }
     }
 }

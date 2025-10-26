@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrrTableManagementScreen));
             this.lblScreenTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.rbOccupied = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -44,10 +44,10 @@
             this.DGVTables = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowTableInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateTableToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewTable = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.rbReserved = new Guna.UI2.WinForms.Guna2RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTables)).BeginInit();
@@ -194,26 +194,27 @@
             // 
             this.DGVTables.AllowUserToAddRows = false;
             this.DGVTables.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.DGVTables.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVTables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DGVTables.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVTables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVTables.ColumnHeadersHeight = 30;
             this.DGVTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVTables.DefaultCellStyle = dataGridViewCellStyle12;
+            this.DGVTables.ContextMenuStrip = this.contextMenuStrip1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVTables.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVTables.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DGVTables.Location = new System.Drawing.Point(119, 345);
             this.DGVTables.Name = "DGVTables";
@@ -254,36 +255,40 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem1,
-            this.deleteUserToolStripMenuItem});
+            this.ShowTableInfoToolStripMenuItem,
+            this.AddNewTableToolStripMenuItem,
+            this.updateTableToolStripMenuItem1,
+            this.deleteTableToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(197, 100);
             // 
-            // addNewUserToolStripMenuItem
+            // ShowTableInfoToolStripMenuItem
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.addNewUserToolStripMenuItem.Text = "Show Table Info";
+            this.ShowTableInfoToolStripMenuItem.Name = "ShowTableInfoToolStripMenuItem";
+            this.ShowTableInfoToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.ShowTableInfoToolStripMenuItem.Text = "Show Table Info";
+            this.ShowTableInfoToolStripMenuItem.Click += new System.EventHandler(this.ShowTableInfoToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem
+            // AddNewTableToolStripMenuItem
             // 
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.updateUserToolStripMenuItem.Text = "Add New Table";
+            this.AddNewTableToolStripMenuItem.Name = "AddNewTableToolStripMenuItem";
+            this.AddNewTableToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.AddNewTableToolStripMenuItem.Text = "Add New Table";
+            this.AddNewTableToolStripMenuItem.Click += new System.EventHandler(this.AddNewTableToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem1
+            // updateTableToolStripMenuItem1
             // 
-            this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
-            this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
-            this.updateUserToolStripMenuItem1.Text = "Update Table Info";
+            this.updateTableToolStripMenuItem1.Name = "updateTableToolStripMenuItem1";
+            this.updateTableToolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
+            this.updateTableToolStripMenuItem1.Text = "Update Table Info";
+            this.updateTableToolStripMenuItem1.Click += new System.EventHandler(this.updateTableToolStripMenuItem1_Click);
             // 
-            // deleteUserToolStripMenuItem
+            // deleteTableToolStripMenuItem
             // 
-            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.deleteUserToolStripMenuItem.Text = "Delete Table";
+            this.deleteTableToolStripMenuItem.Name = "deleteTableToolStripMenuItem";
+            this.deleteTableToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.deleteTableToolStripMenuItem.Text = "Delete Table";
+            this.deleteTableToolStripMenuItem.Click += new System.EventHandler(this.deleteTableToolStripMenuItem_Click);
             // 
             // btnAddNewTable
             // 
@@ -375,10 +380,10 @@
         private Guna.UI2.WinForms.Guna2DataGridView DGVTables;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowTableInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateTableToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteTableToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2RadioButton rbReserved;
     }
 }

@@ -24,11 +24,16 @@ namespace Restaurant_System
 
         private void _FillDGVTable()
         {
+            cbFilter.Enabled = false;
+            tbFilter.Enabled = false;
 
             _dtTables = ClsTable.GetTables();
 
             if (_dtTables.Rows.Count > 0)
             {
+                cbFilter.Enabled = true;
+                tbFilter.Enabled = true;
+
                 DGVTables.DataSource = _dtTables;
 
                 DGVTables.Columns[0].HeaderText = "TableID";
@@ -43,14 +48,11 @@ namespace Restaurant_System
                 DGVTables.Columns[3].HeaderText = "Status";
                 DGVTables.Columns[3].Width = 150;
 
-                DGVTables.Columns[4].HeaderText = "Phone";
+                DGVTables.Columns[4].HeaderText = "CreatedAt";
                 DGVTables.Columns[4].Width = 150;
 
-                DGVTables.Columns[5].HeaderText = "CreatedAt";
+                DGVTables.Columns[5].HeaderText = "Update";
                 DGVTables.Columns[5].Width = 150;
-
-                DGVTables.Columns[8].HeaderText = "Update";
-                DGVTables.Columns[8].Width = 150;
 
             }
 
@@ -68,16 +70,19 @@ namespace Restaurant_System
             cbFilter.Items.Add("Status");
 
             cbFilter.SelectedIndex = 0;
-
         }
 
         private void btnAddNewTable_Click(object sender, EventArgs e)
         {
+            FrrAddOrEditTableScreen frr = new FrrAddOrEditTableScreen();
+            frr.ShowDialog();
 
+            _FillDGVTable();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _dtTables.DefaultView.RowFilter = "";
             tbFilter.Text = string.Empty;
 
             if (cbFilter.SelectedItem.ToString() == "None")
@@ -121,7 +126,7 @@ namespace Restaurant_System
 
             if (_dtTables.Rows.Count > 0)
             {
-                if (cbFilter.SelectedItem.ToString() == "UserID" || cbFilter.SelectedItem.ToString() == "Capacity")
+                if (cbFilter.SelectedItem.ToString() == "TableID" || cbFilter.SelectedItem.ToString() == "Capacity")
                     _dtTables.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), tbFilter.Text.Trim());
                 else
                     _dtTables.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", cbFilter.SelectedItem.ToString(), tbFilter.Text.Trim());
@@ -135,7 +140,7 @@ namespace Restaurant_System
         private void rbAvailable_CheckedChanged(object sender, EventArgs e)
         {
             if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), "Available");
+                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Available");
             else
                 MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -143,7 +148,7 @@ namespace Restaurant_System
         private void rbOccupied_CheckedChanged(object sender, EventArgs e)
         {
             if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), "Occupied");
+                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Occupied");
             else
                 MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -151,9 +156,48 @@ namespace Restaurant_System
         private void rbReserved_CheckedChanged(object sender, EventArgs e)
         {
             if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), "Reserved");
+                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Reserved");
             else
                 MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void ShowTableInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DGVTables.RowCount > 0)
+            {
+                FrrShowTableInfo frr = new FrrShowTableInfo((int)DGVTables.CurrentRow.Cells[0].Value);
+                frr.ShowDialog();
+            }
+        }
+
+        private void AddNewTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrrAddOrEditTableScreen frr = new FrrAddOrEditTableScreen();
+            frr.ShowDialog();
+
+            _FillDGVTable();
+        }
+
+        private void updateTableToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (DGVTables.RowCount > 0)
+            {
+                FrrAddOrEditTableScreen frr = new FrrAddOrEditTableScreen((int)DGVTables.CurrentRow.Cells[0].Value);
+                frr.ShowDialog();
+
+                _FillDGVTable();
+            }
+        }
+
+        private void deleteTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DGVTables.RowCount > 0)
+            {
+                FrrDeleteTable frr = new FrrDeleteTable((int)DGVTables.CurrentRow.Cells[0].Value);
+                frr.ShowDialog();
+
+                _FillDGVTable();
+            }
         }
     }
 }

@@ -190,5 +190,11 @@ namespace ClsInvetoryBusinessLayer
         {
             return ClsInventoryData.GetAllInventory();
         }
+
+        public static DataTable GetAllUnits()
+        {
+            return ClsInventoryData.GetAllUnits();
+        }
+
     }
 }

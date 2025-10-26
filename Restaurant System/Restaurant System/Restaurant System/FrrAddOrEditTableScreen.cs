@@ -31,7 +31,7 @@ namespace Restaurant_System
             InitializeComponent();
 
             _TableID = TableID;
-            _Mode = enMode.AddNew;
+            _Mode = enMode.Update;
         }
 
         private void _FillCbStatus()
@@ -76,6 +76,7 @@ namespace Restaurant_System
 
         private void FrrAddOrEditTableScreen_Load(object sender, EventArgs e)
         {
+            tbTableName.MaxLength = 50;
             _FillCbStatus();
             _LoadTableInfo();
         }
@@ -94,8 +95,16 @@ namespace Restaurant_System
             }
             else
             {
-                e.Cancel = false;
-                errorProvider1.SetError(tbTableName, null);
+                if (ClsTable.IsTableExistByTableName(tbTableName.Text.Trim()) && tbTableName.Text.Trim() != _Table.TableName)
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(tbTableName, "TableName Aleardy Exist");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(tbTableName, null);
+                }
             }
         }
 
@@ -138,6 +147,7 @@ namespace Restaurant_System
                     lblTableID.Text = _Table.TableID.ToString();
                     lblCreatedAt.Text = _Table.CreatedAt.ToString();
                     MessageBox.Show("Table Added Successfully", "Table Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblTitleMode.Text = "Update Table Info";
                 }
                 else
                 {

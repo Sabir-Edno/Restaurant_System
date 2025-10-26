@@ -351,6 +351,10 @@ namespace ClsUserBusinessLayer
         {
             return ClsUserData.GetAllManagers();
         }
-        
+        public static bool IsUserReferenceToAnyOrderByID(int UserID)
+        {
+            return ClsUserData.IsUserReferenceToAnyOrderByID(UserID);
+        }
+
     }
 }

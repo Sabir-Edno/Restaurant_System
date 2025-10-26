@@ -40,8 +40,8 @@
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DGVCategories = new Guna.UI2.WinForms.Guna2DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowCategoryInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblScreenTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -96,6 +96,8 @@
             this.tbFilter.SelectedText = "";
             this.tbFilter.Size = new System.Drawing.Size(225, 34);
             this.tbFilter.TabIndex = 52;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilter_KeyPress);
             // 
             // guna2HtmlLabel5
             // 
@@ -126,6 +128,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(209, 36);
             this.cbFilter.TabIndex = 50;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // DGVCategories
             // 
@@ -187,36 +190,40 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
+            this.ShowCategoryInfoToolStripMenuItem,
+            this.AddNewCategoryToolStripMenuItem,
             this.updateUserToolStripMenuItem1,
             this.deleteUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(222, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(222, 128);
             // 
-            // addNewUserToolStripMenuItem
+            // ShowCategoryInfoToolStripMenuItem
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
-            this.addNewUserToolStripMenuItem.Text = "Show Category Info";
+            this.ShowCategoryInfoToolStripMenuItem.Name = "ShowCategoryInfoToolStripMenuItem";
+            this.ShowCategoryInfoToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.ShowCategoryInfoToolStripMenuItem.Text = "Show Category Info";
+            this.ShowCategoryInfoToolStripMenuItem.Click += new System.EventHandler(this.ShowCategoryInfoToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem
+            // AddNewCategoryToolStripMenuItem
             // 
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
-            this.updateUserToolStripMenuItem.Text = "Add New Category";
+            this.AddNewCategoryToolStripMenuItem.Name = "AddNewCategoryToolStripMenuItem";
+            this.AddNewCategoryToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.AddNewCategoryToolStripMenuItem.Text = "Add New Category";
+            this.AddNewCategoryToolStripMenuItem.Click += new System.EventHandler(this.AddNewCategoryToolStripMenuItem_Click);
             // 
             // updateUserToolStripMenuItem1
             // 
             this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
             this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(221, 24);
             this.updateUserToolStripMenuItem1.Text = "Update Category Info";
+            this.updateUserToolStripMenuItem1.Click += new System.EventHandler(this.updateUserToolStripMenuItem1_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
             this.deleteUserToolStripMenuItem.Text = "Delete Category";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // lblScreenTitle
             // 
@@ -257,6 +264,7 @@
             this.btnAddNewCategory.Name = "btnAddNewCategory";
             this.btnAddNewCategory.Size = new System.Drawing.Size(64, 58);
             this.btnAddNewCategory.TabIndex = 57;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
             // 
             // FrrCategoryManagementScreen
             // 
@@ -296,8 +304,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblScreenTitle;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowCategoryInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
     }

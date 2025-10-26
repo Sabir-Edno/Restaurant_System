@@ -88,3 +88,10 @@ C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\D
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrShowInventoryInfo.resources
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrShowItemInfo.resources
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrShowUserInfo.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteCategory.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteInventory.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteItem.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteTable.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteUser.resources
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\UtilLib.dll
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\UtilLib.pdb
