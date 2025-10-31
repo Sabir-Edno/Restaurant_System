@@ -67,10 +67,10 @@ namespace Restaurant_System
 
                 lblCreatedAt.Text = Item.CreatedAt.ToShortDateString();
 
-                if (Item.Updated != DateTime.MinValue)
-                    lblUpdatedAt.Text = Item.Updated.ToShortDateString();
+                if (Item.UpdatedAt != DateTime.MinValue)
+                    lblUpdatedAt.Text = Item.UpdatedAt.ToShortDateString();
                 else
-                    lblUpdatedAt.Text = "Not Updated Yet";
+                    lblUpdatedAt.Text = "Not UpdatedAt Yet";
             }
             else
                 MessageBox.Show($"Item With ID = {ItemID} Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);

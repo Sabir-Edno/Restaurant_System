@@ -81,16 +81,16 @@ namespace Restaurant_System
                 else
                     tbDescription.Text = "Not Adding Yet";
                 if (_Item.Availability)
-                    rbActive.Checked = true;
+                    rbInStock.Checked = true;
                 else
-                    rbInActive.Checked = false;
+                    rbOutOfStock.Checked = false;
 
                 lblCreatedAt.Text = _Item.CreatedAt.ToShortDateString();
 
-                if (_Item.Updated != DateTime.MinValue)
-                    lblUpdatedAt.Text = _Item.Updated.ToShortDateString();
+                if (_Item.UpdatedAt != DateTime.MinValue)
+                    lblUpdatedAt.Text = _Item.UpdatedAt.ToShortDateString();
                 else
-                    lblUpdatedAt.Text = "Not Updated Yet";
+                    lblUpdatedAt.Text = "Not UpdatedAt Yet";
 
                 if (_Item.ImagePath != "")
                 {
@@ -99,7 +99,7 @@ namespace Restaurant_System
                 }
                 else
                 {
-                    pbItemImage.ImageLocation = null;
+                    pbItemImage.ImageLocation = "";
                     btnRemove.Enabled = false;
                 }
 
@@ -129,22 +129,17 @@ namespace Restaurant_System
             }
             else
             {
-                e.Cancel = false;
-                errorProvider1.SetError(tbItemName, null);
-            }
-        }
-
-        private void tbDescription_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbDescription.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(tbDescription, "Description Not Be Empty");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(tbDescription, null);
+                if(ClsItem.IsItemExistByItemName(tbItemName.Text.Trim()) && tbItemName.Text.Trim() != _Item.ItemName.Trim())
+                {
+                    e.Cancel = true;
+                    errorProvider1.SetError(tbItemName, "ItemName Aleady Exist");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(tbItemName, null);
+                }
+                  
             }
         }
 
@@ -179,12 +174,13 @@ namespace Restaurant_System
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             openFileDialog.Title = "Select a Image";
-            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*|*.jpg|*.png";
             openFileDialog.InitialDirectory = @"C:\";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFile = openFileDialog.FileName;
+                pbItemImage.ImageLocation = selectedFile;
                 btnRemove.Enabled = true;
             }
         }
@@ -195,7 +191,7 @@ namespace Restaurant_System
             {
                 if (_Mode == enMode.Update)
                 {
-                    if (_Item.ImagePath != null)
+                    if (_Item.ImagePath != "")
                     {
 
                         try
@@ -247,19 +243,24 @@ namespace Restaurant_System
                 _Item.Description = tbDescription.Text;
             else
                 _Item.Description = "Not Adding Yet";
-            _Item.Price = Convert.ToInt32(tbPrice.Text);
+            _Item.Price = Convert.ToDecimal(tbPrice.Text);
 
-            if (rbActive.Checked)
+            if (rbInStock.Checked)
                 _Item.Availability = true;
             else
                 _Item.Availability = false;
 
-            if (pbItemImage.ImageLocation != null)
+            if (pbItemImage.ImageLocation != "")
                 _Item.ImagePath = pbItemImage.ImageLocation;
             else
-                _Item.ImagePath = "";
+                _Item.ImagePath = null;
 
-            _Item.CreatedAt = DateTime.Now;
+            if (_Mode == enMode.AddNew)
+            {
+                _Item.CreatedAt = DateTime.Now;
+                _Item.UpdatedAt = DateTime.MinValue;
+            }
+            
 
             if (_Mode == enMode.AddNew)
             {
@@ -276,10 +277,10 @@ namespace Restaurant_System
             }
             else
             {
-                _Item.Updated = DateTime.Now;
+                _Item.UpdatedAt = DateTime.Now;
+                lblUpdatedAt.Text = _Item.UpdatedAt.ToShortDateString();
                 if (_Item.Save())
                 {
-
                     MessageBox.Show("Item Updated Successfully", "Item Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -288,5 +289,7 @@ namespace Restaurant_System
                 }
             }
         }
+
+       
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ClsCategoryBusinessLayer;
 using ClsInvetoryBusinessLayer;
+using ClsMenuItemBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Restaurant_System
     {
         ClsInventory _Inventory;
         int _InventoryID = -1;
+        int _SelectedItemID = -1;
         enum enMode { AddNew = 1, Update = 2 }
         enMode _Mode = enMode.Update;
 
@@ -69,7 +71,7 @@ namespace Restaurant_System
                 lblTitleMode.Text = "Update Inventory Info";
 
                 lblInventoryID.Text = _Inventory.InventoryID.ToString();
-                tbItemName.Text = _Inventory.ItemName;
+                _SelectedItemID = _Inventory.ItemID;
                 tbQuantity.Text = _Inventory.Quantity.ToString();
 
                 if (cbUnits.Enabled)
@@ -88,7 +90,6 @@ namespace Restaurant_System
 
         private void FrrAddOrEditInventory_Load(object sender, EventArgs e)
         {
-            tbItemName.MaxLength = 100;
             _FillCbUnits();
             _LoadInventoryInfo();
         }
@@ -96,28 +97,6 @@ namespace Restaurant_System
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void tbItemName_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbItemName.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(tbItemName, "ItemName Not Be Empty");
-            }
-            else
-            {
-                if (ClsInventory.IsInventoryExistByItemName(tbItemName.Text.Trim()) && tbItemName.Text != _Inventory.ItemName)
-                {
-                    e.Cancel = true;
-                    errorProvider1.SetError(tbItemName, "ItemName Aleardy Exits");
-                }
-                else
-                {
-                    e.Cancel = false;
-                    errorProvider1.SetError(tbItemName, null);
-                }
-            }
         }
 
         private void tbQuantity_Validating(object sender, CancelEventArgs e)
@@ -166,13 +145,19 @@ namespace Restaurant_System
                 return;
             }
 
-            if(!cbUnits.Enabled)
+            if (_SelectedItemID == -1 || !CheckIfItemSelected.Checked)
             {
-                MessageBox.Show("Data Units Don't Found. You Can Add This Data Without it", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You Should Select Item", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            _Inventory.ItemName = tbItemName.Text;
+            if(!cbUnits.Enabled)
+            {
+                MessageBox.Show("Data Units Don't Found. You Can't Add This Data Without it", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _Inventory.ItemID = _SelectedItemID;
             _Inventory.Quantity = Convert.ToDecimal(tbQuantity.Text);
             _Inventory.Unit = cbUnits.SelectedItem.ToString();
             _Inventory.ReorderLevel = Convert.ToDecimal(tbReorderLevel.Text);
@@ -194,6 +179,7 @@ namespace Restaurant_System
             else
             {
                 _Inventory.LastUpdate = DateTime.Now;
+                lblLastUpdate.Text = _Inventory.LastUpdate.ToShortDateString();
                 if (_Inventory.Save())
                 {
 
@@ -203,6 +189,41 @@ namespace Restaurant_System
                 {
                     MessageBox.Show("Inventory Not Updated", "Inventory Not Updated", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void SelectedItemID_DataBack(object sender , int ItemID)
+        {
+            if(ClsItem.IsItemExistByItemID(ItemID))
+            {
+                _SelectedItemID = ItemID;
+                CheckIfItemSelected.Checked = true;
+            }
+            else
+            {
+                MessageBox.Show("Item Selected Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _SelectedItemID = -1;
+                CheckIfItemSelected.Checked = false;
+            }    
+        }
+
+        private void btnSelectItem_Click(object sender, EventArgs e)
+        {
+            if (_Mode == enMode.AddNew)
+            {
+                FrrItemSelector frr = new FrrItemSelector();
+
+                frr.DataBack += SelectedItemID_DataBack;
+
+                frr.Show();
+            }
+            else
+            {
+                FrrItemSelector frr = new FrrItemSelector(_SelectedItemID);
+
+                frr.DataBack += SelectedItemID_DataBack;
+
+                frr.Show();
             }
         }
     }

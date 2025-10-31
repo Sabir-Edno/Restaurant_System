@@ -51,11 +51,11 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblTitleMode = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.rbActive = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbInActive = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.pbItemImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.rbInStock = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbOutOfStock = new Guna.UI2.WinForms.Guna2RadioButton();
             this.btnUpload = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnRemove = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.pbItemImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemImage)).BeginInit();
             this.SuspendLayout();
@@ -176,7 +176,6 @@
             this.tbPrice.Location = new System.Drawing.Point(142, 448);
             this.tbPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.PasswordChar = '*';
             this.tbPrice.PlaceholderText = "Enter Price";
             this.tbPrice.SelectedText = "";
             this.tbPrice.Size = new System.Drawing.Size(225, 34);
@@ -249,7 +248,6 @@
             this.tbDescription.SelectedText = "";
             this.tbDescription.Size = new System.Drawing.Size(225, 125);
             this.tbDescription.TabIndex = 49;
-            this.tbDescription.Validating += new System.ComponentModel.CancelEventHandler(this.tbDescription_Validating);
             // 
             // guna2HtmlLabel1
             // 
@@ -368,63 +366,51 @@
             this.guna2HtmlLabel7.TabIndex = 56;
             this.guna2HtmlLabel7.Text = "Availability : ";
             // 
-            // rbActive
+            // rbInStock
             // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.BackColor = System.Drawing.Color.Transparent;
-            this.rbActive.Checked = true;
-            this.rbActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.BorderThickness = 0;
-            this.rbActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbActive.CheckedState.InnerOffset = -4;
-            this.rbActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbActive.ForeColor = System.Drawing.Color.White;
-            this.rbActive.Location = new System.Drawing.Point(152, 525);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(81, 30);
-            this.rbActive.TabIndex = 57;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbActive.UncheckedState.BorderThickness = 2;
-            this.rbActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbActive.UseVisualStyleBackColor = false;
+            this.rbInStock.AutoSize = true;
+            this.rbInStock.BackColor = System.Drawing.Color.Transparent;
+            this.rbInStock.Checked = true;
+            this.rbInStock.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbInStock.CheckedState.BorderThickness = 0;
+            this.rbInStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbInStock.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbInStock.CheckedState.InnerOffset = -4;
+            this.rbInStock.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbInStock.ForeColor = System.Drawing.Color.White;
+            this.rbInStock.Location = new System.Drawing.Point(152, 525);
+            this.rbInStock.Name = "rbInStock";
+            this.rbInStock.Size = new System.Drawing.Size(90, 30);
+            this.rbInStock.TabIndex = 57;
+            this.rbInStock.TabStop = true;
+            this.rbInStock.Text = "InStock";
+            this.rbInStock.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbInStock.UncheckedState.BorderThickness = 2;
+            this.rbInStock.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbInStock.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbInStock.UseVisualStyleBackColor = false;
             // 
-            // rbInActive
+            // rbOutOfStock
             // 
-            this.rbInActive.AutoSize = true;
-            this.rbInActive.BackColor = System.Drawing.Color.Transparent;
-            this.rbInActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.BorderThickness = 0;
-            this.rbInActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbInActive.CheckedState.InnerOffset = -4;
-            this.rbInActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbInActive.ForeColor = System.Drawing.Color.White;
-            this.rbInActive.Location = new System.Drawing.Point(249, 525);
-            this.rbInActive.Name = "rbInActive";
-            this.rbInActive.Size = new System.Drawing.Size(95, 30);
-            this.rbInActive.TabIndex = 58;
-            this.rbInActive.Text = "InActive";
-            this.rbInActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbInActive.UncheckedState.BorderThickness = 2;
-            this.rbInActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbInActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbInActive.UseVisualStyleBackColor = false;
-            // 
-            // pbItemImage
-            // 
-            this.pbItemImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbItemImage.FillColor = System.Drawing.Color.Transparent;
-            this.pbItemImage.ImageRotate = 0F;
-            this.pbItemImage.Location = new System.Drawing.Point(530, 250);
-            this.pbItemImage.Name = "pbItemImage";
-            this.pbItemImage.Size = new System.Drawing.Size(222, 173);
-            this.pbItemImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbItemImage.TabIndex = 67;
-            this.pbItemImage.TabStop = false;
+            this.rbOutOfStock.AutoSize = true;
+            this.rbOutOfStock.BackColor = System.Drawing.Color.Transparent;
+            this.rbOutOfStock.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbOutOfStock.CheckedState.BorderThickness = 0;
+            this.rbOutOfStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbOutOfStock.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbOutOfStock.CheckedState.InnerOffset = -4;
+            this.rbOutOfStock.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOutOfStock.ForeColor = System.Drawing.Color.White;
+            this.rbOutOfStock.Location = new System.Drawing.Point(258, 525);
+            this.rbOutOfStock.Name = "rbOutOfStock";
+            this.rbOutOfStock.Size = new System.Drawing.Size(121, 30);
+            this.rbOutOfStock.TabIndex = 58;
+            this.rbOutOfStock.Text = "OutOfStock";
+            this.rbOutOfStock.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbOutOfStock.UncheckedState.BorderThickness = 2;
+            this.rbOutOfStock.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbOutOfStock.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbOutOfStock.UseVisualStyleBackColor = false;
             // 
             // btnUpload
             // 
@@ -474,15 +460,25 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // pbItemImage
+            // 
+            this.pbItemImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbItemImage.Location = new System.Drawing.Point(530, 247);
+            this.pbItemImage.Name = "pbItemImage";
+            this.pbItemImage.Size = new System.Drawing.Size(233, 165);
+            this.pbItemImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbItemImage.TabIndex = 70;
+            this.pbItemImage.TabStop = false;
+            // 
             // FrrAddOrEditItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(776, 592);
+            this.Controls.Add(this.pbItemImage);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.pbItemImage);
             this.Controls.Add(this.lblUpdatedAt);
             this.Controls.Add(this.lblUpdateAtTitle);
             this.Controls.Add(this.lblCreatedAt);
@@ -491,8 +487,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.rbInActive);
-            this.Controls.Add(this.rbActive);
+            this.Controls.Add(this.rbOutOfStock);
+            this.Controls.Add(this.rbInStock);
             this.Controls.Add(this.guna2HtmlLabel7);
             this.Controls.Add(this.cbCategories);
             this.Controls.Add(this.guna2HtmlLabel6);
@@ -539,11 +535,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitleMode;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2RadioButton rbInActive;
-        private Guna.UI2.WinForms.Guna2RadioButton rbActive;
+        private Guna.UI2.WinForms.Guna2RadioButton rbOutOfStock;
+        private Guna.UI2.WinForms.Guna2RadioButton rbInStock;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnRemove;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnUpload;
-        private Guna.UI2.WinForms.Guna2PictureBox pbItemImage;
+        private System.Windows.Forms.PictureBox pbItemImage;
     }
 }

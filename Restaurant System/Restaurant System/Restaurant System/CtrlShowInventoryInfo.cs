@@ -40,7 +40,7 @@ namespace Restaurant_System
             if (Inventory != null)
             {
                 lblInventoryID.Text = InventoryID.ToString();
-                lblItemName.Text = Inventory.ItemName;
+                //lblItemName.Text = Inventory.ItemName;
                 lblQuantity.Text = Inventory.Quantity.ToString();
                 lblUnit.Text = Inventory.Unit;
                 lblReorderLevel.Text = Inventory.ReorderLevel.ToString();

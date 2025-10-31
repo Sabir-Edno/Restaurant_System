@@ -20,7 +20,7 @@ namespace ClsMenuItemBusinessLayer
         public bool Availability { set; get; }
         public string ImagePath { set; get; }
         public DateTime CreatedAt { set; get; }
-        public DateTime Updated { set; get; }
+        public DateTime UpdatedAt { set; get; }
 
         public ClsItem()
         {
@@ -32,10 +32,10 @@ namespace ClsMenuItemBusinessLayer
             this.Availability = false;
             this.ImagePath = "";
             this.CreatedAt = DateTime.MinValue;
-            this.Updated = DateTime.MinValue;
+            this.UpdatedAt = DateTime.MinValue;
             Mode = enMode.AddNew;
         }
-        private ClsItem(int ItemID, int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime Updated)
+        private ClsItem(int ItemID, int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime UpdatedAt)
         {
             this.ItemID = ItemID;
             this.CategoryID = CategoryID;
@@ -45,17 +45,17 @@ namespace ClsMenuItemBusinessLayer
             this.Availability = Availability;
             this.ImagePath = ImagePath;
             this.CreatedAt = CreatedAt;
-            this.Updated = Updated;
+            this.UpdatedAt = UpdatedAt;
             Mode = enMode.Update;
         }
         private bool _AddNewItem()
         {
-            this.ItemID = (int)ClsItemData.AddNewItem(this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.Updated);
+            this.ItemID = (int)ClsItemData.AddNewItem(this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.UpdatedAt);
             return (this.ItemID != -1);
         }
         private bool _UpdateItem()
         {
-            return ClsItemData.UpdateItem(this.ItemID, this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.Updated);
+            return ClsItemData.UpdateItem(this.ItemID, this.CategoryID, this.ItemName, this.Description, this.Price, this.Availability, this.ImagePath, this.CreatedAt, this.UpdatedAt);
         }
         public static bool DeleteItem(int ItemID)
         {
@@ -93,9 +93,9 @@ namespace ClsMenuItemBusinessLayer
         {
             return ClsItemData.IsItemExistByCreatedAt(CreatedAt);
         }
-        public static bool IsItemExistByUpdated(DateTime Updated)
+        public static bool IsItemExistByUpdatedAt(DateTime UpdatedAt)
         {
-            return ClsItemData.IsItemExistByUpdated(Updated);
+            return ClsItemData.IsItemExistByUpdatedAt(UpdatedAt);
         }
         public static ClsItem FindByItemID(int ItemID)
         {
@@ -106,12 +106,12 @@ namespace ClsMenuItemBusinessLayer
             bool Availability = false;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByItemID(ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByItemID(ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -124,12 +124,12 @@ namespace ClsMenuItemBusinessLayer
             bool Availability = false;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByCategoryID(ref ItemID, CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByCategoryID(ref ItemID, CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -142,12 +142,12 @@ namespace ClsMenuItemBusinessLayer
             bool Availability = false;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByItemName(ref ItemID, ref CategoryID, ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByItemName(ref ItemID, ref CategoryID, ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -160,12 +160,12 @@ namespace ClsMenuItemBusinessLayer
             bool Availability = false;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByDescription(ref ItemID, ref CategoryID, ref ItemName, Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByDescription(ref ItemID, ref CategoryID, ref ItemName, Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -178,12 +178,12 @@ namespace ClsMenuItemBusinessLayer
             bool Availability = false;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByPrice(ref ItemID, ref CategoryID, ref ItemName, ref Description, Price, ref Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByPrice(ref ItemID, ref CategoryID, ref ItemName, ref Description, Price, ref Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -196,12 +196,12 @@ namespace ClsMenuItemBusinessLayer
             decimal Price = -1;
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByAvailability(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, Availability, ref ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByAvailability(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, Availability, ref ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -214,12 +214,12 @@ namespace ClsMenuItemBusinessLayer
             decimal Price = -1;
             bool Availability = false;
             DateTime CreatedAt = DateTime.MinValue;
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByImagePath(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ImagePath, ref CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByImagePath(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ImagePath, ref CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
@@ -232,16 +232,16 @@ namespace ClsMenuItemBusinessLayer
             decimal Price = -1;
             bool Availability = false;
             string ImagePath = "";
-            DateTime Updated = DateTime.MinValue;
+            DateTime UpdatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByCreatedAt(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, CreatedAt, ref Updated);
+            bool IsFound = ClsItemData.GetItemByCreatedAt(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, CreatedAt, ref UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }
-        public static ClsItem FindByUpdated(DateTime Updated)
+        public static ClsItem FindByUpdatedAt(DateTime UpdatedAt)
         {
             int ItemID = -1;
             int CategoryID = -1;
@@ -252,10 +252,10 @@ namespace ClsMenuItemBusinessLayer
             string ImagePath = "";
             DateTime CreatedAt = DateTime.MinValue;
 
-            bool IsFound = ClsItemData.GetItemByUpdated(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, Updated);
+            bool IsFound = ClsItemData.GetItemByUpdatedAt(ref ItemID, ref CategoryID, ref ItemName, ref Description, ref Price, ref Availability, ref ImagePath, ref CreatedAt, UpdatedAt);
 
             if (IsFound)
-                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated);
+                return new ClsItem(ItemID, CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt);
             else
                 return null;
         }

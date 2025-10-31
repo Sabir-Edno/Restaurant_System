@@ -116,7 +116,7 @@
             this.lblTotalTables.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalTables.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotalTables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.lblTotalTables.Location = new System.Drawing.Point(194, 122);
+            this.lblTotalTables.Location = new System.Drawing.Point(194, 124);
             this.lblTotalTables.Name = "lblTotalTables";
             this.lblTotalTables.Size = new System.Drawing.Size(30, 32);
             this.lblTotalTables.TabIndex = 61;
@@ -127,7 +127,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 122);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 124);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(118, 32);
             this.guna2HtmlLabel2.TabIndex = 60;

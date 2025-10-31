@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Restaurant_System
 {
     public partial class FrrDeleteItem : Form
     {
         int _ItemID = -1;
+        ClsItem Item;
 
         public FrrDeleteItem(int ItemID)
         {
@@ -25,7 +27,7 @@ namespace Restaurant_System
 
         private void _LoadItemInfo()
         {
-            ClsItem Item = ClsItem.FindByItemID(_ItemID);
+            Item = ClsItem.FindByItemID(_ItemID);
 
             if (Item != null)
             {
@@ -55,7 +57,23 @@ namespace Restaurant_System
                 if (!ClsItem.IsItemReferenceToAnyOrderDetailByID(_ItemID))
                 {
                     if (ClsItem.DeleteItem(_ItemID))
+                    {
                         MessageBox.Show($"Item With ID = {_ItemID} Deleted Successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        ctrlShowItemInfo1.ResetValues();
+
+                        if (Item.ImagePath != "")
+                        {
+                            try
+                            {
+                                File.Delete(Item.ImagePath);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Error : To Delete Image Item After Deleted Item");
+                            }
+                        }
+                    }
                     else
                         MessageBox.Show($"Item With ID = {_ItemID} Not Deleted", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

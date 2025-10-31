@@ -11,7 +11,7 @@ namespace ClsMenuDataAccessLayer
 {
     public class ClsItemData
     {
-        public static bool GetItemByID(int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByID(int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE ItemID = @ItemID";
@@ -48,10 +48,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -74,7 +74,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByItemID(int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByItemID(int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE ItemID = @ItemID";
@@ -111,10 +111,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -137,7 +137,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByCategoryID(ref int ItemID, int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByCategoryID(ref int ItemID, int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE CategoryID = @CategoryID";
@@ -174,10 +174,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -200,7 +200,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByItemName(ref int ItemID, ref int CategoryID, string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByItemName(ref int ItemID, ref int CategoryID, string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE ItemName = @ItemName";
@@ -237,10 +237,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -263,7 +263,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByDescription(ref int ItemID, ref int CategoryID, ref string ItemName, string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByDescription(ref int ItemID, ref int CategoryID, ref string ItemName, string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE Description = @Description";
@@ -295,10 +295,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -321,7 +321,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByPrice(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByPrice(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE Price = @Price";
@@ -358,10 +358,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -384,7 +384,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByAvailability(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByAvailability(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, bool Availability, ref string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE Availability = @Availability";
@@ -421,10 +421,10 @@ namespace ClsMenuDataAccessLayer
 
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -447,7 +447,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByImagePath(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, string ImagePath, ref DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByImagePath(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, string ImagePath, ref DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE ImagePath = @ImagePath";
@@ -479,10 +479,10 @@ namespace ClsMenuDataAccessLayer
                                 Availability = (bool)reader["Availability"];
                                 CreatedAt = (DateTime)reader["CreatedAt"];
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -505,7 +505,7 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByCreatedAt(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, DateTime CreatedAt, ref DateTime Updated)
+        public static bool GetItemByCreatedAt(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, DateTime CreatedAt, ref DateTime UpdatedAt)
         {
             bool isFound = false;
             string query = "SELECT * FROM MenuItems WHERE CreatedAt = @CreatedAt";
@@ -542,10 +542,10 @@ namespace ClsMenuDataAccessLayer
                                     ImagePath = "";
 
 
-                                if (reader["Updated"] != DBNull.Value)
-                                    Updated = (DateTime)reader["Updated"];
+                                if (reader["UpdatedAt"] != DBNull.Value)
+                                    UpdatedAt = (DateTime)reader["UpdatedAt"];
                                 else
-                                    Updated = DateTime.MinValue;
+                                    UpdatedAt = DateTime.MinValue;
 
                             }
                             else
@@ -568,17 +568,17 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool GetItemByUpdated(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, DateTime Updated)
+        public static bool GetItemByUpdatedAt(ref int ItemID, ref int CategoryID, ref string ItemName, ref string Description, ref decimal Price, ref bool Availability, ref string ImagePath, ref DateTime CreatedAt, DateTime UpdatedAt)
         {
             bool isFound = false;
-            string query = "SELECT * FROM MenuItems WHERE Updated = @Updated";
+            string query = "SELECT * FROM MenuItems WHERE UpdatedAt = @UpdatedAt";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Updated", Updated);
+                        command.Parameters.AddWithValue("@UpdatedAt", UpdatedAt);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -626,11 +626,11 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static int AddNewItem(int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime Updated)
+        public static int AddNewItem(int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime UpdatedAtAt)
         {
             int ItemID = -1;
-            string query = @"INSERT INTO MenuItems (CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, Updated)
-                            VALUES (@CategoryID, @ItemName, @Description, @Price, @Availability, @ImagePath, @CreatedAt, @Updated)
+            string query = @"INSERT INTO MenuItems (CategoryID, ItemName, Description, Price, Availability, ImagePath, CreatedAt, UpdatedAt)
+                            VALUES (@CategoryID, @ItemName, @Description, @Price, @Availability, @ImagePath, @CreatedAt, @UpdatedAt)
                             SELECT SCOPE_IDENTITY();";
             try
             {
@@ -655,10 +655,10 @@ namespace ClsMenuDataAccessLayer
                             command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
 
-                        if (Updated != DateTime.MinValue)
-                            command.Parameters.AddWithValue("@Updated", Updated);
+                        if (UpdatedAtAt != DateTime.MinValue)
+                            command.Parameters.AddWithValue("@UpdatedAt", UpdatedAtAt);
                         else
-                            command.Parameters.AddWithValue("@Updated", DBNull.Value);
+                            command.Parameters.AddWithValue("@UpdatedAt", DBNull.Value);
                         connection.Open();
                         object result = command.ExecuteScalar();
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
@@ -679,7 +679,7 @@ namespace ClsMenuDataAccessLayer
 
             return ItemID;
         }
-        public static bool UpdateItem(int ItemID, int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime Updated)
+        public static bool UpdateItem(int ItemID, int CategoryID, string ItemName, string Description, decimal Price, bool Availability, string ImagePath, DateTime CreatedAt, DateTime UpdatedAt)
         {
             int rowsAffected = 0;
             string query = @"UPDATE MenuItems  
@@ -691,7 +691,7 @@ namespace ClsMenuDataAccessLayer
                             Availability = @Availability, 
                             ImagePath = @ImagePath, 
                             CreatedAt = @CreatedAt, 
-                            Updated = @Updated
+                            UpdatedAt = @UpdatedAt
                             WHERE ItemID = @ItemID";
             try
             {
@@ -706,9 +706,12 @@ namespace ClsMenuDataAccessLayer
                         command.Parameters.AddWithValue("@Description", Description);
                         command.Parameters.AddWithValue("@Price", Price);
                         command.Parameters.AddWithValue("@Availability", Availability);
-                        command.Parameters.AddWithValue("@ImagePath", ImagePath);
+                        if (ImagePath != null)
+                            command.Parameters.AddWithValue("@ImagePath", ImagePath);
+                        else
+                            command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
-                        command.Parameters.AddWithValue("@Updated", Updated);
+                        command.Parameters.AddWithValue("@UpdatedAt", UpdatedAt);
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
@@ -1022,17 +1025,17 @@ namespace ClsMenuDataAccessLayer
 
             return isFound;
         }
-        public static bool IsItemExistByUpdated(DateTime Updated)
+        public static bool IsItemExistByUpdatedAt(DateTime UpdatedAt)
         {
             bool isFound = false;
-            string query = "SELECT Found=1 FROM MenuItems WHERE Updated = @Updated";
+            string query = "SELECT Found=1 FROM MenuItems WHERE UpdatedAt = @UpdatedAt";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Updated", Updated);
+                        command.Parameters.AddWithValue("@UpdatedAt", UpdatedAt);
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -1055,7 +1058,7 @@ namespace ClsMenuDataAccessLayer
         public static DataTable GetAllMenuItems()
         {
             DataTable dt = new DataTable();
-            string query = "SELECT * FROM MenuItems";
+            string query = "SELECT ItemID , CategoryID , ItemName , Description , Price , Availability , CreatedAt , UpdatedAt FROM MenuItems";
             try
             {
                 using (SqlConnection connection = new SqlConnection(ClsConnectionString.GetConnectionString()))

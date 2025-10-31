@@ -48,7 +48,10 @@ namespace Restaurant_System
                 if(!ClsCategory.IsCategoryReferenceToAnyItemByID(_CategoryID))
                 {
                     if (ClsCategory.DeleteCategory(_CategoryID))
+                    {
                         MessageBox.Show($"Category With ID = {_CategoryID} Deleted Successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ctrlShowCategoryInfo1.ResetValues();
+                    }
                     else
                         MessageBox.Show($"Category With ID = {_CategoryID} Not Deleted", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

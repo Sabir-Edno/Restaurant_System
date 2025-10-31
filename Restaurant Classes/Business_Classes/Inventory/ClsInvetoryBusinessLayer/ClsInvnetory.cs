@@ -13,7 +13,7 @@ namespace ClsInvetoryBusinessLayer
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
         public int InventoryID { set; get; }
-        public string ItemName { set; get; }
+        public int ItemID { set; get; }
         public decimal Quantity { set; get; }
         public string Unit { set; get; }
         public decimal ReorderLevel { set; get; }
@@ -22,17 +22,17 @@ namespace ClsInvetoryBusinessLayer
         public ClsInventory()
         {
             this.InventoryID = -1;
-            this.ItemName = "";
+            this.ItemID = -1;
             this.Quantity = -1;
             this.Unit = "";
             this.ReorderLevel = -1;
             this.LastUpdate = DateTime.MinValue;
             Mode = enMode.AddNew;
         }
-        private ClsInventory(int InventoryID, string ItemName, decimal Quantity, string Unit, decimal ReorderLevel, DateTime LastUpdate)
+        private ClsInventory(int InventoryID, int ItemID, decimal Quantity, string Unit, decimal ReorderLevel, DateTime LastUpdate)
         {
             this.InventoryID = InventoryID;
-            this.ItemName = ItemName;
+            this.ItemID = ItemID;
             this.Quantity = Quantity;
             this.Unit = Unit;
             this.ReorderLevel = ReorderLevel;
@@ -41,12 +41,12 @@ namespace ClsInvetoryBusinessLayer
         }
         private bool _AddNewInventory()
         {
-            this.InventoryID = (int)ClsInventoryData.AddNewInventory(this.ItemName, this.Quantity, this.Unit, this.ReorderLevel, this.LastUpdate);
+            this.InventoryID = (int)ClsInventoryData.AddNewInventory(this.ItemID, this.Quantity, this.Unit, this.ReorderLevel, this.LastUpdate);
             return (this.InventoryID != -1);
         }
         private bool _UpdateInventory()
         {
-            return ClsInventoryData.UpdateInventory(this.InventoryID, this.ItemName, this.Quantity, this.Unit, this.ReorderLevel, this.LastUpdate);
+            return ClsInventoryData.UpdateInventory(this.InventoryID, this.ItemID, this.Quantity, this.Unit, this.ReorderLevel, this.LastUpdate);
         }
         public static bool DeleteInventory(int InventoryID)
         {
@@ -56,9 +56,9 @@ namespace ClsInvetoryBusinessLayer
         {
             return ClsInventoryData.IsInventoryExistByInventoryID(InventoryID);
         }
-        public static bool IsInventoryExistByItemName(string ItemName)
+        public static bool IsInventoryExistByItemID(int ItemID)
         {
-            return ClsInventoryData.IsInventoryExistByItemName(ItemName);
+            return ClsInventoryData.IsInventoryExistByItemID(ItemID);
         }
         public static bool IsInventoryExistByQuantity(decimal Quantity)
         {
@@ -78,20 +78,20 @@ namespace ClsInvetoryBusinessLayer
         }
         public static ClsInventory FindByInventoryID(int InventoryID)
         {
-            string ItemName = "";
+            int ItemID = -1;
             decimal Quantity = -1;
             string Unit = "";
             decimal ReorderLevel = -1;
             DateTime LastUpdate = DateTime.MinValue;
 
-            bool IsFound = ClsInventoryData.GetInventoryByInventoryID(InventoryID, ref ItemName, ref Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByInventoryID(InventoryID, ref ItemID, ref Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
-        public static ClsInventory FindByItemName(string ItemName)
+        public static ClsInventory FindByItemID(int ItemID)
         {
             int InventoryID = -1;
             decimal Quantity = -1;
@@ -99,70 +99,70 @@ namespace ClsInvetoryBusinessLayer
             decimal ReorderLevel = -1;
             DateTime LastUpdate = DateTime.MinValue;
 
-            bool IsFound = ClsInventoryData.GetInventoryByItemName(ref InventoryID, ItemName, ref Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByItemID(ref InventoryID, ItemID, ref Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
         public static ClsInventory FindByQuantity(decimal Quantity)
         {
             int InventoryID = -1;
-            string ItemName = "";
+            int ItemID = -1;
             string Unit = "";
             decimal ReorderLevel = -1;
             DateTime LastUpdate = DateTime.MinValue;
 
-            bool IsFound = ClsInventoryData.GetInventoryByQuantity(ref InventoryID, ref ItemName, Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByQuantity(ref InventoryID, ref ItemID, Quantity, ref Unit, ref ReorderLevel, ref LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
         public static ClsInventory FindByUnit(string Unit)
         {
             int InventoryID = -1;
-            string ItemName = "";
+            int ItemID = -1;
             decimal Quantity = -1;
             decimal ReorderLevel = -1;
             DateTime LastUpdate = DateTime.MinValue;
 
-            bool IsFound = ClsInventoryData.GetInventoryByUnit(ref InventoryID, ref ItemName, ref Quantity, Unit, ref ReorderLevel, ref LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByUnit(ref InventoryID, ref ItemID, ref Quantity, Unit, ref ReorderLevel, ref LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
         public static ClsInventory FindByReorderLevel(decimal ReorderLevel)
         {
             int InventoryID = -1;
-            string ItemName = "";
+            int ItemID = -1;
             decimal Quantity = -1;
             string Unit = "";
             DateTime LastUpdate = DateTime.MinValue;
 
-            bool IsFound = ClsInventoryData.GetInventoryByReorderLevel(ref InventoryID, ref ItemName, ref Quantity, ref Unit, ReorderLevel, ref LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByReorderLevel(ref InventoryID, ref ItemID, ref Quantity, ref Unit, ReorderLevel, ref LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
         public static ClsInventory FindByLastUpdate(DateTime LastUpdate)
         {
             int InventoryID = -1;
-            string ItemName = "";
+            int ItemID = -1;
             decimal Quantity = -1;
             string Unit = "";
             decimal ReorderLevel = -1;
 
-            bool IsFound = ClsInventoryData.GetInventoryByLastUpdate(ref InventoryID, ref ItemName, ref Quantity, ref Unit, ref ReorderLevel, LastUpdate);
+            bool IsFound = ClsInventoryData.GetInventoryByLastUpdate(ref InventoryID, ref ItemID, ref Quantity, ref Unit, ref ReorderLevel, LastUpdate);
 
             if (IsFound)
-                return new ClsInventory(InventoryID, ItemName, Quantity, Unit, ReorderLevel, LastUpdate);
+                return new ClsInventory(InventoryID, ItemID, Quantity, Unit, ReorderLevel, LastUpdate);
             else
                 return null;
         }
@@ -195,6 +195,5 @@ namespace ClsInvetoryBusinessLayer
         {
             return ClsInventoryData.GetAllUnits();
         }
-
     }
 }

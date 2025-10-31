@@ -53,6 +53,7 @@
             this.lblRemove.Size = new System.Drawing.Size(16, 32);
             this.lblRemove.TabIndex = 7;
             this.lblRemove.Text = "X";
+            this.lblRemove.Click += new System.EventHandler(this.lblRemove_Click);
             // 
             // pbItemImage
             // 

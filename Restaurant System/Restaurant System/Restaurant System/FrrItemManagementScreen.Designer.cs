@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrrItemManagementScreen));
-            this.rbInActive = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rbActive = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbOutOfStock = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbInStock = new Guna.UI2.WinForms.Guna2RadioButton();
             this.lblTotalRecords = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbFilter = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,9 +42,9 @@
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DGVItems = new Guna.UI2.WinForms.Guna2DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowItemInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UpdateItemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblScreenTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -53,49 +53,51 @@
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rbInActive
+            // rbOutOfStock
             // 
-            this.rbInActive.AutoSize = true;
-            this.rbInActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.BorderThickness = 0;
-            this.rbInActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbInActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbInActive.CheckedState.InnerOffset = -4;
-            this.rbInActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbInActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.rbInActive.Location = new System.Drawing.Point(577, 281);
-            this.rbInActive.Name = "rbInActive";
-            this.rbInActive.Size = new System.Drawing.Size(95, 30);
-            this.rbInActive.TabIndex = 56;
-            this.rbInActive.Text = "InActive";
-            this.rbInActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbInActive.UncheckedState.BorderThickness = 2;
-            this.rbInActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbInActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbInActive.Visible = false;
+            this.rbOutOfStock.AutoSize = true;
+            this.rbOutOfStock.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbOutOfStock.CheckedState.BorderThickness = 0;
+            this.rbOutOfStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbOutOfStock.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbOutOfStock.CheckedState.InnerOffset = -4;
+            this.rbOutOfStock.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOutOfStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.rbOutOfStock.Location = new System.Drawing.Point(586, 285);
+            this.rbOutOfStock.Name = "rbOutOfStock";
+            this.rbOutOfStock.Size = new System.Drawing.Size(121, 30);
+            this.rbOutOfStock.TabIndex = 56;
+            this.rbOutOfStock.Text = "OutOfStock";
+            this.rbOutOfStock.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbOutOfStock.UncheckedState.BorderThickness = 2;
+            this.rbOutOfStock.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbOutOfStock.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbOutOfStock.Visible = false;
+            this.rbOutOfStock.CheckedChanged += new System.EventHandler(this.rbOutOfStock_CheckedChanged);
             // 
-            // rbActive
+            // rbInStock
             // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Checked = true;
-            this.rbActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.BorderThickness = 0;
-            this.rbActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rbActive.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rbActive.CheckedState.InnerOffset = -4;
-            this.rbActive.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.rbActive.Location = new System.Drawing.Point(480, 281);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(81, 30);
-            this.rbActive.TabIndex = 55;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rbActive.UncheckedState.BorderThickness = 2;
-            this.rbActive.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rbActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rbActive.Visible = false;
+            this.rbInStock.AutoSize = true;
+            this.rbInStock.Checked = true;
+            this.rbInStock.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbInStock.CheckedState.BorderThickness = 0;
+            this.rbInStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbInStock.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbInStock.CheckedState.InnerOffset = -4;
+            this.rbInStock.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.rbInStock.Location = new System.Drawing.Point(472, 285);
+            this.rbInStock.Name = "rbInStock";
+            this.rbInStock.Size = new System.Drawing.Size(90, 30);
+            this.rbInStock.TabIndex = 55;
+            this.rbInStock.TabStop = true;
+            this.rbInStock.Text = "InStock";
+            this.rbInStock.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbInStock.UncheckedState.BorderThickness = 2;
+            this.rbInStock.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbInStock.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbInStock.Visible = false;
+            this.rbInStock.CheckedChanged += new System.EventHandler(this.rbInStock_CheckedChanged);
             // 
             // lblTotalRecords
             // 
@@ -142,6 +144,8 @@
             this.tbFilter.SelectedText = "";
             this.tbFilter.Size = new System.Drawing.Size(225, 34);
             this.tbFilter.TabIndex = 52;
+            this.tbFilter.TextChanged += new System.EventHandler(this.tbFilter_TextChanged);
+            this.tbFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFilter_KeyPress);
             // 
             // guna2HtmlLabel5
             // 
@@ -172,6 +176,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(209, 36);
             this.cbFilter.TabIndex = 50;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // DGVItems
             // 
@@ -233,43 +238,47 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem1,
+            this.ShowItemInfoToolStripMenuItem,
+            this.AddNewItemToolStripMenuItem,
+            this.UpdateItemToolStripMenuItem1,
             this.deleteUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(192, 100);
             // 
-            // addNewUserToolStripMenuItem
+            // ShowItemInfoToolStripMenuItem
             // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-            this.addNewUserToolStripMenuItem.Text = "Show Item Info";
+            this.ShowItemInfoToolStripMenuItem.Name = "ShowItemInfoToolStripMenuItem";
+            this.ShowItemInfoToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.ShowItemInfoToolStripMenuItem.Text = "Show Item Info";
+            this.ShowItemInfoToolStripMenuItem.Click += new System.EventHandler(this.ShowItemInfoToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem
+            // AddNewItemToolStripMenuItem
             // 
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-            this.updateUserToolStripMenuItem.Text = "Add New Item";
+            this.AddNewItemToolStripMenuItem.Name = "AddNewItemToolStripMenuItem";
+            this.AddNewItemToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.AddNewItemToolStripMenuItem.Text = "Add New Item";
+            this.AddNewItemToolStripMenuItem.Click += new System.EventHandler(this.AddNewItemToolStripMenuItem_Click);
             // 
-            // updateUserToolStripMenuItem1
+            // UpdateItemToolStripMenuItem1
             // 
-            this.updateUserToolStripMenuItem1.Name = "updateUserToolStripMenuItem1";
-            this.updateUserToolStripMenuItem1.Size = new System.Drawing.Size(191, 24);
-            this.updateUserToolStripMenuItem1.Text = "Update Item Info";
+            this.UpdateItemToolStripMenuItem1.Name = "UpdateItemToolStripMenuItem1";
+            this.UpdateItemToolStripMenuItem1.Size = new System.Drawing.Size(191, 24);
+            this.UpdateItemToolStripMenuItem1.Text = "Update Item Info";
+            this.UpdateItemToolStripMenuItem1.Click += new System.EventHandler(this.UpdateItemToolStripMenuItem1_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
             this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.deleteUserToolStripMenuItem.Text = "Delete Item";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // lblScreenTitle
             // 
             this.lblScreenTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblScreenTitle.Font = new System.Drawing.Font("Poppins SemiBold", 30F, System.Drawing.FontStyle.Bold);
             this.lblScreenTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.lblScreenTitle.Location = new System.Drawing.Point(647, 21);
+            this.lblScreenTitle.Location = new System.Drawing.Point(629, 21);
             this.lblScreenTitle.Name = "lblScreenTitle";
             this.lblScreenTitle.Size = new System.Drawing.Size(446, 90);
             this.lblScreenTitle.TabIndex = 48;
@@ -303,6 +312,7 @@
             this.btnAddNewItem.Name = "btnAddNewItem";
             this.btnAddNewItem.Size = new System.Drawing.Size(64, 58);
             this.btnAddNewItem.TabIndex = 57;
+            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
             // 
             // FrrItemManagementScreen
             // 
@@ -310,8 +320,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1703, 982);
-            this.Controls.Add(this.rbInActive);
-            this.Controls.Add(this.rbActive);
+            this.Controls.Add(this.rbOutOfStock);
+            this.Controls.Add(this.rbInStock);
             this.Controls.Add(this.lblTotalRecords);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.tbFilter);
@@ -334,8 +344,8 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2RadioButton rbInActive;
-        private Guna.UI2.WinForms.Guna2RadioButton rbActive;
+        private Guna.UI2.WinForms.Guna2RadioButton rbOutOfStock;
+        private Guna.UI2.WinForms.Guna2RadioButton rbInStock;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalRecords;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2TextBox tbFilter;
@@ -345,9 +355,9 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblScreenTitle;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ShowItemInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UpdateItemToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteUserToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAddNewItem;
     }

@@ -95,7 +95,7 @@ namespace Restaurant_System
             }
             else
             {
-                if (ClsTable.IsTableExistByTableName(tbTableName.Text.Trim()) && tbTableName.Text.Trim() != _Table.TableName)
+                if (ClsTable.IsTableExistByTableName(tbTableName.Text.Trim()) && tbTableName.Text.Trim() != _Table.TableName.Trim())
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(tbTableName, "TableName Aleardy Exist");
@@ -138,7 +138,12 @@ namespace Restaurant_System
             _Table.TableName = tbTableName.Text;
             _Table.Capacity = Convert.ToInt32(tbCapacity.Text);
             _Table.Status = cbStatus.SelectedItem.ToString();
-            _Table.CreatedAt = DateTime.Now;
+
+            if (_Mode == enMode.AddNew)
+            {
+                _Table.CreatedAt = DateTime.Now;
+                _Table.Updated = DateTime.MinValue;
+            }
 
             if (_Mode == enMode.AddNew)
             {
@@ -157,6 +162,7 @@ namespace Restaurant_System
             else
             {
                 _Table.Updated = DateTime.Now;
+                lblUpdatedAt.Text = _Table.Updated.ToShortDateString();
                 if (_Table.Save())
                 {
 

@@ -126,7 +126,7 @@ namespace Restaurant_System
             }
             else
             {
-                if(ClsUser.IsUserExistByUsername(tbUsername.Text.Trim()) && tbUsername.Text.Trim() != _User.Username)
+                if(ClsUser.IsUserExistByUsername(tbUsername.Text.Trim()) && tbUsername.Text.Trim() != _User.Username.Trim())
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(tbUsername, "Username Is Aleardy Exist");
@@ -148,7 +148,7 @@ namespace Restaurant_System
             }
             else
             {
-                if (ClsUser.IsUserExistByPhone(tbPhone.Text.Trim()) && tbPhone.Text.Trim() != _User.Phone)
+                if (ClsUser.IsUserExistByPhone(tbPhone.Text.Trim()) && tbPhone.Text.Trim() != _User.Phone.Trim())
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(tbPhone, "Phone Is Aleardy Exist");
@@ -176,7 +176,7 @@ namespace Restaurant_System
                 }
                 else
                 {
-                    if (ClsUser.IsUserExistByEmail(tbEmail.Text.Trim()) && tbEmail.Text.Trim() != _User.Email)
+                    if (ClsUser.IsUserExistByEmail(tbEmail.Text.Trim()) && tbEmail.Text.Trim() != _User.Email.Trim())
                     {
                         e.Cancel = true;
                         errorProvider1.SetError(tbEmail, "Email Is Aleardy Exist");
@@ -291,6 +291,7 @@ namespace Restaurant_System
             else
             {
                 _User.Updated = DateTime.Now;
+                lblUpdatedAt.Text = _User.Updated.ToShortDateString();
                 if (_User.Save())
                 {
                     DataBack?.Invoke(this, _User.RoleID);

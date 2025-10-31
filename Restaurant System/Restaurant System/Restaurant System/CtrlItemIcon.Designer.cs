@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CtrlItemIcon));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lblItemName = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblRemove = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pbItemImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemImage)).BeginInit();
             this.SuspendLayout();
@@ -52,16 +51,6 @@
             this.lblItemName.TabIndex = 5;
             this.lblItemName.Text = "???";
             // 
-            // lblRemove
-            // 
-            this.lblRemove.BackColor = System.Drawing.Color.Transparent;
-            this.lblRemove.Font = new System.Drawing.Font("Poppins Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemove.Location = new System.Drawing.Point(3, 0);
-            this.lblRemove.Name = "lblRemove";
-            this.lblRemove.Size = new System.Drawing.Size(16, 32);
-            this.lblRemove.TabIndex = 4;
-            this.lblRemove.Text = "X";
-            // 
             // pbItemImage
             // 
             this.pbItemImage.Image = ((System.Drawing.Image)(resources.GetObject("pbItemImage.Image")));
@@ -80,11 +69,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.Controls.Add(this.lblItemName);
-            this.Controls.Add(this.lblRemove);
             this.Controls.Add(this.pbItemImage);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "CtrlItemIcon";
             this.Size = new System.Drawing.Size(113, 106);
             this.Load += new System.EventHandler(this.CtrlItem_Load);
+            this.Click += new System.EventHandler(this.CtrlItemIcon_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbItemImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,7 +85,6 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblItemName;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblRemove;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbItemImage;
     }
 }

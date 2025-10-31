@@ -96,7 +96,7 @@ namespace Restaurant_System
             }
             else
             {
-                if (ClsCategory.IsCategoryExistByCategoryName(tbCategoryName.Text) && tbCategoryName.Text != _Category.CategoryName)
+                if (ClsCategory.IsCategoryExistByCategoryName(tbCategoryName.Text.Trim()) && tbCategoryName.Text.Trim() != _Category.CategoryName.Trim())
                 {
                     e.Cancel = true;
                     errorProvider1.SetError(tbCategoryName, "CategroyName Aleardy Exists");
@@ -123,7 +123,11 @@ namespace Restaurant_System
             else
                 _Category.Description = "";
 
-            _Category.CreatedAt = DateTime.Now;
+            if (_Mode == enMode.AddNew)
+            {
+                _Category.CreatedAt = DateTime.Now;
+                _Category.Updated = DateTime.MinValue;
+            }
 
             if (_Mode == enMode.AddNew)
             {
@@ -142,6 +146,7 @@ namespace Restaurant_System
             else
             {
                 _Category.Updated = DateTime.Now;
+                lblUpdatedAt.Text = _Category.Updated.ToShortDateString();
                 if (_Category.Save())
                 {
                     MessageBox.Show("Category Updated Successfully", "Category Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);

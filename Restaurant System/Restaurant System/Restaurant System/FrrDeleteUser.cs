@@ -56,7 +56,10 @@ namespace Restaurant_System
                 if (!ClsUser.IsUserReferenceToAnyOrderByID(_UserID))
                 {
                     if (ClsUser.DeleteUser(_UserID))
+                    {
                         MessageBox.Show($"User With ID = {_UserID} Deleted Successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ctrlShowUserInfo1.ResetValues();
+                    }
                     else
                         MessageBox.Show($"User With ID = {_UserID} Not Deleted", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

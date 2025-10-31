@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelLeft = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCategoryManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnInventoryManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnTableManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUserManagement = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -39,7 +40,7 @@
             this.PanelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelCenter = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnCategoryManagement = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnItemManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PanelLeft.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(18)))));
+            this.PanelLeft.Controls.Add(this.btnItemManagement);
             this.PanelLeft.Controls.Add(this.btnCategoryManagement);
             this.PanelLeft.Controls.Add(this.btnInventoryManagement);
             this.PanelLeft.Controls.Add(this.btnTableManagement);
@@ -67,6 +69,31 @@
             this.PanelLeft.Name = "PanelLeft";
             this.PanelLeft.Size = new System.Drawing.Size(239, 1102);
             this.PanelLeft.TabIndex = 1;
+            // 
+            // btnCategoryManagement
+            // 
+            this.btnCategoryManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategoryManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnCategoryManagement.BorderRadius = 15;
+            this.btnCategoryManagement.BorderThickness = 2;
+            this.btnCategoryManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategoryManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategoryManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategoryManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCategoryManagement.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCategoryManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCategoryManagement.FillColor = System.Drawing.Color.Transparent;
+            this.btnCategoryManagement.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnCategoryManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCategoryManagement.ForeColor = System.Drawing.Color.White;
+            this.btnCategoryManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnCategoryManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnCategoryManagement.Location = new System.Drawing.Point(10, 465);
+            this.btnCategoryManagement.Name = "btnCategoryManagement";
+            this.btnCategoryManagement.Size = new System.Drawing.Size(219, 45);
+            this.btnCategoryManagement.TabIndex = 4;
+            this.btnCategoryManagement.Text = "Category Management";
+            this.btnCategoryManagement.Click += new System.EventHandler(this.btnCategoryManagement_Click);
             // 
             // btnInventoryManagement
             // 
@@ -86,7 +113,7 @@
             this.btnInventoryManagement.ForeColor = System.Drawing.Color.White;
             this.btnInventoryManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.btnInventoryManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnInventoryManagement.Location = new System.Drawing.Point(12, 396);
+            this.btnInventoryManagement.Location = new System.Drawing.Point(10, 396);
             this.btnInventoryManagement.Name = "btnInventoryManagement";
             this.btnInventoryManagement.Size = new System.Drawing.Size(219, 45);
             this.btnInventoryManagement.TabIndex = 3;
@@ -111,7 +138,7 @@
             this.btnTableManagement.ForeColor = System.Drawing.Color.White;
             this.btnTableManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.btnTableManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnTableManagement.Location = new System.Drawing.Point(12, 328);
+            this.btnTableManagement.Location = new System.Drawing.Point(10, 328);
             this.btnTableManagement.Name = "btnTableManagement";
             this.btnTableManagement.Size = new System.Drawing.Size(219, 45);
             this.btnTableManagement.TabIndex = 2;
@@ -136,7 +163,7 @@
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
             this.btnUserManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.btnUserManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnUserManagement.Location = new System.Drawing.Point(12, 251);
+            this.btnUserManagement.Location = new System.Drawing.Point(10, 251);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(219, 45);
             this.btnUserManagement.TabIndex = 1;
@@ -161,7 +188,7 @@
             this.btnPOS.ForeColor = System.Drawing.Color.White;
             this.btnPOS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.btnPOS.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnPOS.Location = new System.Drawing.Point(12, 179);
+            this.btnPOS.Location = new System.Drawing.Point(10, 179);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Size = new System.Drawing.Size(219, 45);
             this.btnPOS.TabIndex = 0;
@@ -200,30 +227,30 @@
             this.PanelCenter.Size = new System.Drawing.Size(1703, 1002);
             this.PanelCenter.TabIndex = 3;
             // 
-            // btnCategoryManagement
+            // btnItemManagement
             // 
-            this.btnCategoryManagement.BackColor = System.Drawing.Color.Transparent;
-            this.btnCategoryManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnCategoryManagement.BorderRadius = 15;
-            this.btnCategoryManagement.BorderThickness = 2;
-            this.btnCategoryManagement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCategoryManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCategoryManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCategoryManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCategoryManagement.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCategoryManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCategoryManagement.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategoryManagement.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnCategoryManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCategoryManagement.ForeColor = System.Drawing.Color.White;
-            this.btnCategoryManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnCategoryManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.btnCategoryManagement.Location = new System.Drawing.Point(12, 465);
-            this.btnCategoryManagement.Name = "btnCategoryManagement";
-            this.btnCategoryManagement.Size = new System.Drawing.Size(219, 45);
-            this.btnCategoryManagement.TabIndex = 4;
-            this.btnCategoryManagement.Text = "Category Management";
-            this.btnCategoryManagement.Click += new System.EventHandler(this.btnCategoryManagement_Click);
+            this.btnItemManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnItemManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnItemManagement.BorderRadius = 15;
+            this.btnItemManagement.BorderThickness = 2;
+            this.btnItemManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItemManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnItemManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnItemManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnItemManagement.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnItemManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnItemManagement.FillColor = System.Drawing.Color.Transparent;
+            this.btnItemManagement.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnItemManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnItemManagement.ForeColor = System.Drawing.Color.White;
+            this.btnItemManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnItemManagement.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnItemManagement.Location = new System.Drawing.Point(10, 531);
+            this.btnItemManagement.Name = "btnItemManagement";
+            this.btnItemManagement.Size = new System.Drawing.Size(219, 45);
+            this.btnItemManagement.TabIndex = 5;
+            this.btnItemManagement.Text = "Item Management";
+            this.btnItemManagement.Click += new System.EventHandler(this.btnItemManagement_Click);
             // 
             // FrrDashboardScreen
             // 
@@ -260,5 +287,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnTableManagement;
         private Guna.UI2.WinForms.Guna2GradientButton btnInventoryManagement;
         private Guna.UI2.WinForms.Guna2GradientButton btnCategoryManagement;
+        private Guna.UI2.WinForms.Guna2GradientButton btnItemManagement;
     }
 }

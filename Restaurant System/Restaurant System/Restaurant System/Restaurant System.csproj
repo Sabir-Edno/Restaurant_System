@@ -136,6 +136,12 @@
     <Compile Include="FrrDispalyTables.Designer.cs">
       <DependentUpon>FrrDispalyTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrrItemSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrrItemSelector.Designer.cs">
+      <DependentUpon>FrrItemSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrrShowCategoryInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrrItemManagementScreen.resx">
       <DependentUpon>FrrItemManagementScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrrItemSelector.resx">
+      <DependentUpon>FrrItemSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrrPOSScreen.resx">
       <DependentUpon>FrrPOSScreen.cs</DependentUpon>

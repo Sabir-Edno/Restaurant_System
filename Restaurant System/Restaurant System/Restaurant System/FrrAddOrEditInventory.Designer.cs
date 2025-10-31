@@ -39,7 +39,6 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbItemName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblInventoryID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -48,6 +47,8 @@
             this.lblLastUpdate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUpdateAtTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbUnits = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnSelectItem = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.CheckIfItemSelected = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,32 +202,6 @@
             this.guna2HtmlLabel4.TabIndex = 50;
             this.guna2HtmlLabel4.Text = "Unit : ";
             // 
-            // tbItemName
-            // 
-            this.tbItemName.BackColor = System.Drawing.Color.Transparent;
-            this.tbItemName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
-            this.tbItemName.BorderRadius = 10;
-            this.tbItemName.BorderThickness = 2;
-            this.tbItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbItemName.DefaultText = "";
-            this.tbItemName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbItemName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbItemName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbItemName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbItemName.FillColor = System.Drawing.Color.Black;
-            this.tbItemName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbItemName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbItemName.ForeColor = System.Drawing.Color.White;
-            this.tbItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbItemName.Location = new System.Drawing.Point(158, 172);
-            this.tbItemName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbItemName.Name = "tbItemName";
-            this.tbItemName.PlaceholderText = "Item Name";
-            this.tbItemName.SelectedText = "";
-            this.tbItemName.Size = new System.Drawing.Size(225, 34);
-            this.tbItemName.TabIndex = 47;
-            this.tbItemName.Validating += new System.ComponentModel.CancelEventHandler(this.tbItemName_Validating);
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
@@ -234,9 +209,9 @@
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(14, 172);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(109, 33);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(114, 33);
             this.guna2HtmlLabel2.TabIndex = 46;
-            this.guna2HtmlLabel2.Text = "ItemName : ";
+            this.guna2HtmlLabel2.Text = "Select Item : ";
             // 
             // lblInventoryID
             // 
@@ -326,12 +301,54 @@
             this.cbUnits.Size = new System.Drawing.Size(209, 36);
             this.cbUnits.TabIndex = 65;
             // 
+            // btnSelectItem
+            // 
+            this.btnSelectItem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnSelectItem.BorderRadius = 15;
+            this.btnSelectItem.BorderThickness = 2;
+            this.btnSelectItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelectItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSelectItem.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSelectItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSelectItem.FillColor = System.Drawing.Color.Black;
+            this.btnSelectItem.FillColor2 = System.Drawing.Color.Black;
+            this.btnSelectItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSelectItem.ForeColor = System.Drawing.Color.White;
+            this.btnSelectItem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnSelectItem.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
+            this.btnSelectItem.Location = new System.Drawing.Point(158, 169);
+            this.btnSelectItem.Name = "btnSelectItem";
+            this.btnSelectItem.Size = new System.Drawing.Size(165, 41);
+            this.btnSelectItem.TabIndex = 66;
+            this.btnSelectItem.Text = "Select Item";
+            this.btnSelectItem.Click += new System.EventHandler(this.btnSelectItem_Click);
+            // 
+            // CheckIfItemSelected
+            // 
+            this.CheckIfItemSelected.AutoSize = true;
+            this.CheckIfItemSelected.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckIfItemSelected.CheckedState.BorderRadius = 0;
+            this.CheckIfItemSelected.CheckedState.BorderThickness = 0;
+            this.CheckIfItemSelected.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckIfItemSelected.Location = new System.Drawing.Point(339, 183);
+            this.CheckIfItemSelected.Name = "CheckIfItemSelected";
+            this.CheckIfItemSelected.Size = new System.Drawing.Size(18, 17);
+            this.CheckIfItemSelected.TabIndex = 67;
+            this.CheckIfItemSelected.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CheckIfItemSelected.UncheckedState.BorderRadius = 0;
+            this.CheckIfItemSelected.UncheckedState.BorderThickness = 0;
+            this.CheckIfItemSelected.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // FrrAddOrEditInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(73)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(776, 541);
+            this.Controls.Add(this.CheckIfItemSelected);
+            this.Controls.Add(this.btnSelectItem);
             this.Controls.Add(this.cbUnits);
             this.Controls.Add(this.lblLastUpdate);
             this.Controls.Add(this.lblUpdateAtTitle);
@@ -342,7 +359,6 @@
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel4);
-            this.Controls.Add(this.tbItemName);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.lblInventoryID);
             this.Controls.Add(this.guna2HtmlLabel3);
@@ -369,7 +385,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbQuantity;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2TextBox tbItemName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblInventoryID;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
@@ -380,5 +395,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLastUpdate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUpdateAtTitle;
         private Guna.UI2.WinForms.Guna2ComboBox cbUnits;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnSelectItem;
+        private Guna.UI2.WinForms.Guna2CheckBox CheckIfItemSelected;
     }
 }

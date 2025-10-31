@@ -139,26 +139,15 @@ namespace Restaurant_System
 
         private void rbAvailable_CheckedChanged(object sender, EventArgs e)
         {
-            if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Available");
-            else
-                MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+            _dtTables.DefaultView.RowFilter = "";
 
-        private void rbOccupied_CheckedChanged(object sender, EventArgs e)
-        {
-            if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Occupied");
-            else
-                MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void rbReserved_CheckedChanged(object sender, EventArgs e)
-        {
-            if (_dtTables.Rows.Count > 0)
-                _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Reserved");
-            else
-                MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (rbAvailable.Checked)
+            {
+                if (_dtTables.Rows.Count > 0)
+                    _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Available");
+                else
+                    MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ShowTableInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,6 +186,32 @@ namespace Restaurant_System
                 frr.ShowDialog();
 
                 _FillDGVTable();
+            }
+        }
+
+        private void rbOccupied_CheckedChanged(object sender, EventArgs e)
+        {
+            _dtTables.DefaultView.RowFilter = "";
+
+            if (rbOccupied.Checked)
+            {
+                if (_dtTables.Rows.Count > 0)
+                    _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Occupied");
+                else
+                    MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rbReserved_CheckedChanged(object sender, EventArgs e)
+        {
+            _dtTables.DefaultView.RowFilter = "";
+
+            if (rbReserved.Checked)
+            {
+                if (_dtTables.Rows.Count > 0)
+                    _dtTables.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", cbFilter.SelectedItem.ToString(), "Reserved");
+                else
+                    MessageBox.Show("Table Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

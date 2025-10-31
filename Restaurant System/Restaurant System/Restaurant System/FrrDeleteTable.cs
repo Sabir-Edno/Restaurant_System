@@ -49,7 +49,10 @@ namespace Restaurant_System
                 if (!ClsTable.IsItemReferenceToAnyOrderByID(_TableID))
                 {
                     if (ClsTable.DeleteTable(_TableID))
+                    {
                         MessageBox.Show($"Table With ID = {_TableID} Deleted Successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ctrlShowTableInfo1.ResetValues();
+                    }
                     else
                         MessageBox.Show($"Table With ID = {_TableID} Not Deleted", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

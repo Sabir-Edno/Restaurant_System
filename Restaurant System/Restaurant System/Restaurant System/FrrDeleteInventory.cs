@@ -51,7 +51,10 @@ namespace Restaurant_System
             if (MessageBox.Show($"Are You Do You Want To Delete Inventory With ID = {_InventoryID}", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (ClsInventory.DeleteInventory(_InventoryID))
+                {
                     MessageBox.Show($"Inventory With ID = {_InventoryID} Deleted Successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ctrlShowInventoryInfo1.ResetValues();
+                }
                 else
                     MessageBox.Show($"Inventory With ID = {_InventoryID} Not Deleted", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

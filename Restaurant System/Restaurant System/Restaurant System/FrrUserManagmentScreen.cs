@@ -22,7 +22,7 @@ namespace Restaurant_System
         DataTable _dtManagers;
 
         enum UserRole { Admin = 1, Waiter = 2, Chef = 3, Manager = 4 }
-        UserRole _UserRole = UserRole.Chef;
+        UserRole _UserRole;
 
         public FrrUserManagmentScreen()
         {
@@ -31,6 +31,8 @@ namespace Restaurant_System
 
         private void _FillDGVAdmins()
         {
+            _UserRole = UserRole.Admin;
+
             pbVisibleIconAdmins.Visible = true;
             pbVisibleIconChefs.Visible = false;
             pbVisibleIconManagers.Visible = false;
@@ -87,6 +89,8 @@ namespace Restaurant_System
         }
         private void _FillDGVWaiters()
         {
+            _UserRole = UserRole.Waiter;
+
             pbVisibleIconWaiters.Visible = true;
             pbVisibleIconAdmins.Visible = false;
             pbVisibleIconChefs.Visible = false;
@@ -144,6 +148,8 @@ namespace Restaurant_System
         }
         private void _FillDGVManagers()
         {
+            _UserRole = UserRole.Manager;
+
             pbVisibleIconAdmins.Visible = false;
             pbVisibleIconChefs.Visible = false;
             pbVisibleIconManagers.Visible = true;
@@ -200,6 +206,8 @@ namespace Restaurant_System
         }
         private void _FillDGVChefs()
         {
+            _UserRole = UserRole.Chef;
+
             pbVisibleIconAdmins.Visible = false;
             pbVisibleIconChefs.Visible = true;
             pbVisibleIconManagers.Visible = false;
@@ -273,29 +281,26 @@ namespace Restaurant_System
         private void btnAdmins_Click(object sender, EventArgs e)
         {
             _FillDGVAdmins();
-            _UserRole = UserRole.Admin;
         }
 
         private void btnWaiters_Click(object sender, EventArgs e)
         {
             _FillDGVWaiters();
-            _UserRole = UserRole.Waiter;
         }
 
         private void btnChefs_Click(object sender, EventArgs e)
         {
             _FillDGVChefs();
-            _UserRole = UserRole.Manager;
         }
 
         private void btnManagers_Click(object sender, EventArgs e)
         {
             _FillDGVManagers();
-            _UserRole = UserRole.Manager;
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (_UserRole == UserRole.Admin)
                 _dtAdmins.DefaultView.RowFilter = "";
             else if(_UserRole == UserRole.Waiter)
@@ -440,31 +445,52 @@ namespace Restaurant_System
 
         private void AdminStatusActiveFilter()
         {
-            if (_dtAdmins.Rows.Count > 0)
-                _dtAdmins.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
-            else
-                MessageBox.Show("Admins Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtAdmins.DefaultView.RowFilter = "";
+
+            if (rbActive.Checked)
+            {
+                if (_dtAdmins.Rows.Count > 0)
+                    _dtAdmins.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
+                else
+                    MessageBox.Show("Admins Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void WaiterStatusActiveFilter()
         {
-            if (_dtWaiters.Rows.Count > 0)
-                _dtWaiters.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
-            else
-                MessageBox.Show("Waiters Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtWaiters.DefaultView.RowFilter = "";
+
+            if (rbActive.Checked)
+            {
+                if (_dtWaiters.Rows.Count > 0)
+                    _dtWaiters.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
+                else
+                    MessageBox.Show("Waiters Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ChefStatusActiveFilter()
         {
-            if (_dtChefs.Rows.Count > 0)
-                _dtChefs.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
-            else
-                MessageBox.Show("Chefs Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtChefs.DefaultView.RowFilter = "";
+
+            if (rbActive.Checked)
+            {
+
+                if (_dtChefs.Rows.Count > 0)
+                    _dtChefs.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
+                else
+                    MessageBox.Show("Chefs Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ManagerStatusActiveFilter()
         {
-            if (_dtManagers.Rows.Count > 0)
-                _dtManagers.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
-            else
-                MessageBox.Show("Managers Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtManagers.DefaultView.RowFilter = "";
+
+            if (rbActive.Checked)
+            {
+                if (_dtManagers.Rows.Count > 0)
+                    _dtManagers.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 1);
+                else
+                    MessageBox.Show("Managers Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void UserStatusActiveFilter()
         {
@@ -496,31 +522,51 @@ namespace Restaurant_System
 
         private void AdminStatusInActiveFilter()
         {
-            if (_dtAdmins.Rows.Count > 0)
-                _dtAdmins.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
-            else
-                MessageBox.Show("Admins Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtAdmins.DefaultView.RowFilter = "";
+
+            if (rbInActive.Checked)
+            {
+                if (_dtAdmins.Rows.Count > 0)
+                    _dtAdmins.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
+                else
+                    MessageBox.Show("Admins Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void WaiterStatusInActiveFilter()
         {
-            if (_dtWaiters.Rows.Count > 0)
-                _dtWaiters.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
-            else
-                MessageBox.Show("Waiters Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtWaiters.DefaultView.RowFilter = "";
+
+            if (rbInActive.Checked)
+            {
+                if (_dtWaiters.Rows.Count > 0)
+                    _dtWaiters.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
+                else
+                    MessageBox.Show("Waiters Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ChefStatusInActiveFilter()
         {
-            if (_dtChefs.Rows.Count > 0)
-                _dtChefs.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
-            else
-                MessageBox.Show("Chefs Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtChefs.DefaultView.RowFilter = "";
+
+            if (rbInActive.Checked)
+            {
+                if (_dtChefs.Rows.Count > 0)
+                    _dtChefs.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
+                else
+                    MessageBox.Show("Chefs Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ManagerStatusInActiveFilter()
         {
-            if (_dtManagers.Rows.Count > 0)
-                _dtManagers.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
-            else
-                MessageBox.Show("Managers Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _dtManagers.DefaultView.RowFilter = "";
+
+            if (rbInActive.Checked)
+            {
+                if (_dtManagers.Rows.Count > 0)
+                    _dtManagers.DefaultView.RowFilter = string.Format("[{0}] = {1}", cbFilter.SelectedItem.ToString(), 0);
+                else
+                    MessageBox.Show("Managers Data Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void UserStatusInActiveFilter()
         {

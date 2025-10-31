@@ -95,3 +95,4 @@ C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\D
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrDeleteUser.resources
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\UtilLib.dll
 C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\bin\Debug\UtilLib.pdb
+C:\Restaurant-System\Restaurant System\Restaurant System\Restaurant System\obj\Debug\Restaurant_System.FrrItemSelector.resources
